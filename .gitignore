@@ -1,0 +1,25 @@
+# Video projects — tidak di-commit (render besar + aset per-video)
+videos/
+
+# Artefak HyperFrames
+.hyperframes/
+.media/
+.thumbnails/
+.waveform-cache/
+
+# Dependensi
+node_modules/
+
+# Secret
+.env
+.env.*
+!.env.example
+*.key
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Sementara
+qc/
+*.raw
