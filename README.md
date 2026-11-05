@@ -19,7 +19,7 @@ lint → check → render → verifikasi frame dari MP4.
 ```
 video-motion/
 ├── source/              # brief .md (input)                    ~30 KB/brief
-├── shared/              # aset lintas video (font + SFX)       ~700 KB total
+├── shared/              # aset lintas video (font + SFX + GSAP) ~800 KB total
 └── videos/<slug>/       # satu project per video
     ├── index.html + compositions/   # ~90 KB — teks, tidak pakai disk
     ├── assets/bgm/track.mp3         # ~2.3 MB (dikompres 192k)

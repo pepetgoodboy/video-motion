@@ -19,6 +19,19 @@ Project ini **khusus** membuat video Reels/TikTok 9:16 dari brief markdown, mema
 
 Kalau user cuma bilang "buatkan video X", cari briefnya di `source/` dulu.
 
+### Dua mode: faceless vs presenter
+
+| Mode | Skill | Input | Kapan |
+|---|---|---|---|
+| **Faceless** (default) | `/video-reels` | 1 brief `.md` | tidak ada orang di frame |
+| **Presenter** | `/video-reels-presenter` | brief `.md` **+ folder footage** | ada orang nyata di frame |
+
+Mode presenter memakai seluruh pipeline yang sama; skill di
+`.claude/skills/video-reels-presenter/` hanya menambah lapisan presenter (P1/P2/P3), trim per shot,
+cutout alpha, dan verifikasi lip-sync. **Langkah umum jangan diduplikat** — rujuk skill faceless.
+
+Pemicu: user menyebut footage/rekaman/"pakai muka gue"/"ada orangnya"/"presenter".
+
 ---
 
 ## Perintah wajib

@@ -269,8 +269,8 @@ cp ~/video-motion/videos/<slug>/renders/*.mp4 ~/storage/shared/Movies/
 ├── MASTER-PROMPT.md       # untuk Claude web, bukan Claude Code
 ├── .claude/skills/video-reels/SKILL.md
 ├── source/                # brief .md hasil Claude web
-├── shared/                # font + SFX lintas video
-├── tools/                 # cartesia-vo.mjs, diagnose-motion.mjs
+├── shared/                # font + SFX + vendor/gsap lintas video
+├── tools/                 # cartesia-vo, qa-video, measure-frame-cost, make-feasibility-probes
 └── videos/<slug>/         # dibuat otomatis per video (tidak di-commit)
     ├── index.html
     ├── compositions/frames/

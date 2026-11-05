@@ -20,6 +20,10 @@ node_modules/
 .DS_Store
 Thumbs.db
 
+# Footage mentah presenter (video besar, per-proyek)
+footage/
+
 # Sementara
 qc/
+qc-neon-*.png
 *.raw
