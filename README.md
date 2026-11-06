@@ -6,6 +6,10 @@ Pipeline video pendek 1080×1920@60fps dari satu file brief `.md`, memakai
 Tidak ada editor timeline, tidak ada After Effects, tidak ada footage yang harus direkam. Yang
 kamu tulis adalah HTML; yang keluar MP4.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Node](https://img.shields.io/badge/node-%E2%89%A522-brightgreen)
+![HyperFrames](https://img.shields.io/badge/hyperframes-0.8.169-blue)
+
 > **English TL;DR** — A brief-markdown → vertical-video pipeline. HyperFrames renders HTML+GSAP
 > to MP4. Needs Node ≥22, ffmpeg, Chromium, plus optional API keys (Cartesia for Indonesian
 > voiceover, HeyGen for the music catalog). Any coding agent can drive it; the repo is just
@@ -187,10 +191,12 @@ video-motion/
 ├── MASTER-PROMPT.md           # prompt generator brief — untuk chat model, BUKAN untuk agent
 ├── STYLE-LEDGER.md            # catatan rotasi tipe visual V1–V21 (dibaca sebelum tiap video)
 ├── SETUP-TERMUX.md            # panduan setup di Android (Termux + proot Ubuntu)
+├── LICENSE                    # MIT — kode, skill, docs, brief
+├── THIRD-PARTY.md             # lisensi GSAP, font, SFX (bukan MIT)
 ├── source/                    # brief .md (input)              ~15–55 KB per brief
 ├── shared/
-│   ├── fonts/                 # 13 file .woff2 (subset latin) — dipakai ulang tiap video
-│   ├── sfx/                   # 14 SFX siap pakai
+│   ├── fonts/                 # 13 file .woff2 subset latin (SIL OFL) — dipakai ulang tiap video
+│   ├── sfx/                   # 14 SFX siap pakai (lihat THIRD-PARTY.md untuk lisensi)
 │   └── vendor/gsap.min.js     # GSAP lokal (jangan CDN — lihat §7)
 ├── tools/                     # cartesia-vo, qa-video, diagnose-motion, measure-*, gen-tex-copier
 ├── .claude/skills/
@@ -549,16 +555,20 @@ Video menjelaskan **mekanisme dan pencegahan**, bukan cara menyerang.
 
 ## 11. Lisensi & atribusi
 
-- Kode pipeline (`tools/`, skill, dokumentasi) — **lisensi belum ditetapkan**. Tambahkan file
-  `LICENSE` di root sebelum repo benar-benar publik (MIT paling sederhana untuk pipeline seperti ini).
-- **GSAP** (`shared/vendor/gsap.min.js` v3.14.2) — bukan MIT. Mengikuti **GreenSock Standard
-  License** (https://gsap.com/standard-license); boleh dipakai untuk proyek komersial tanpa biaya,
-  tapi tidak boleh dijual ulang sebagai library. Jangan hapus header lisensinya.
-- Font di `shared/fonts/` — subset Google Fonts (SIL Open Font License 1.1); sertakan NOTICE/OFL
-  kalau kamu mendistribusikan ulang repo.
-- SFX di `shared/sfx/` — campuran file bawaan dan Openverse. **Cek `license`/`credit` di
-  `audio_meta.json` tiap video sebelum publikasi**; SFX CC BY wajib atribusi di caption.
-- Brief di `source/` dan video hasilnya: hak milik pembuat masing-masing.
+Repo ini dirilis dengan **MIT License** — lihat [`LICENSE`](LICENSE). Kamu bebas memakai,
+memodifikasi, dan menjual hasil video yang dibuat dengan pipeline ini.
+
+**Aset pihak ketiga tidak ikut MIT.** Detail lengkap di [`THIRD-PARTY.md`](THIRD-PARTY.md):
+
+| Aset | Lisensi | Catatan |
+|---|---|---|
+| `shared/vendor/gsap.min.js` v3.14.2 | **GreenSock Standard License** (bukan MIT) | gratis untuk proyek komersial, tapi tidak boleh dijual ulang sebagai library |
+| `shared/fonts/*.woff2` | **SIL OFL 1.1** (Google Fonts) | boleh dibundel; sertakan teks OFL kalau mendistribusikan ulang file font |
+| `shared/sfx/*.mp3` | **belum terdokumentasi** | cek/telusuri asalnya sebelum repo ini menyebar; tabel isian ada di `THIRD-PARTY.md` |
+| SFX dari `media-use` | Openverse CC0/CC BY | tidak masuk repo; lisensi per video di `audio_meta.json`, CC BY wajib atribusi di caption |
+| Brief di `source/` | MIT | klaim faktual tetap tanggung jawab pembuat brief |
+
+Video hasil render (`videos/`, tidak di-commit) adalah milik pembuatnya.
 
 ---
 
