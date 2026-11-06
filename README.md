@@ -22,8 +22,9 @@ kamu tulis adalah HTML; yang keluar MP4.
 **Quick start** (requirements §2 → instalasi §3 → alur §5):
 
 ```bash
-# 1. siapkan: node 22+, ffmpeg, chromium, lalu .env (§2–3)
+# 1. clone + kredensial (semua key opsional — lihat .env.example)
 git clone https://github.com/pepetgoodboy/video-motion.git && cd video-motion
+cp .env.example .env && chmod 600 .env   # node 22+, ffmpeg, chromium — §2
 
 # 2. bikin brief di chat AI (attach MASTER-PROMPT.md), simpan hasilnya:
 #    source/brief-<slug>.md
@@ -117,23 +118,33 @@ cd video-motion
 
 ### 3.1 Kredensial
 
-Buat `.env` di root repo (sudah masuk `.gitignore`, mode `600`):
+Repo sudah menyediakan template `.env.example`. Salin, lalu isi yang kamu punya:
 
 ```bash
-umask 077
-cat > .env <<'EOF'
-# opsional — VO bahasa Indonesia
-CARTESIA_API_KEY=sk_car_xxxxxxxxxxxxxxxx
-# opsional — katalog musik BGM (alternatif: npx hyperframes auth login)
-HEYGEN_API_KEY=xxxxxxxxxxxxxxxx
-EOF
-chmod 600 .env
+cp .env.example .env
+chmod 600 .env       # .env sudah di-.gitignore
 ```
+
+Isi `.env.example`:
+
+```dotenv
+# opsional — VO bahasa Indonesia (https://play.cartesia.ai/keys)
+CARTESIA_API_KEY=
+
+# opsional — katalog musik BGM (alternatif: npx hyperframes auth login)
+HEYGEN_API_KEY=
+
+# opsional — generate BGM tanpa HeyGen (Lyria, butuh google-genai)
+GEMINI_API_KEY=
+```
+
+Ketiganya **opsional** — tanpa key, pipeline tetap jalan.
 
 | Key | Ambil di | Dipakai untuk | Kalau kosong |
 |---|---|---|---|
 | `CARTESIA_API_KEY` | https://play.cartesia.ai/keys | TTS bahasa Indonesia (`sonic-3.6`) | mode tanpa VO (teks di layar + BGM + SFX) |
 | `HEYGEN_API_KEY` | dashboard HeyGen | katalog musik BGM (API key = billing API) | ganti `audio_request.json` ke `"mode": "generate"` → Lyria (`GEMINI_API_KEY`) / MusicGen lokal; atau taruh sendiri `assets/bgm/track.mp3` |
+| `GEMINI_API_KEY` | https://aistudio.google.com/apikey | generate BGM lewat Lyria | generate jatuh ke MusicGen lokal (butuh `transformers` + `torch`) |
 
 Alternatif HeyGen tanpa API key: `npx hyperframes auth login` (sesi OAuth; free plan memberi akses
 katalog musik). `audio.mjs` membaca env otomatis (`loadEnvFromDir()`, walk-up 5 level dari folder
@@ -191,6 +202,7 @@ video-motion/
 ├── MASTER-PROMPT.md           # prompt generator brief — untuk chat model, BUKAN untuk agent
 ├── STYLE-LEDGER.md            # catatan rotasi tipe visual V1–V21 (dibaca sebelum tiap video)
 ├── SETUP-TERMUX.md            # panduan setup di Android (Termux + proot Ubuntu)
+├── .env.example               # template kredensial (copy → .env, isi, jangan commit)
 ├── LICENSE                    # MIT — kode, skill, docs, brief
 ├── THIRD-PARTY.md             # lisensi GSAP, font, SFX (bukan MIT)
 ├── source/                    # brief .md (input)              ~15–55 KB per brief
