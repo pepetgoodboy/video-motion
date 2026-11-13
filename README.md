@@ -26,11 +26,11 @@ kamu tulis adalah HTML; yang keluar MP4.
 git clone https://github.com/pepetgoodboy/video-motion.git && cd video-motion
 cp .env.example .env && chmod 600 .env   # node 22+, ffmpeg, chromium — §2
 
-# 2. bikin brief di chat AI (attach MASTER-PROMPT.md), simpan hasilnya:
-#    source/brief-<slug>.md
-
-# 3. jalankan agent di repo
+# 2a. paling simpel — cukup topiknya (riset → naskah → gaya → VO → render otomatis)
 claude
+/video-reels apa itu docker?
+
+# 2b. atau dari brief buatan chat AI (attach MASTER-PROMPT.md), simpan ke source/:
 /video-reels source/brief-<slug>.md
 
 # 4. hasil ada di sini
@@ -229,7 +229,12 @@ per video baru ≈ 40–70 MB (MP4 final 20–50 MB + BGM 2.3 MB + HTML/aset kec
 
 | Tool | Fungsi |
 |---|---|
-| `tools/cartesia-vo.mjs` | TTS Indonesia per scene dari `vo-script.json` → `assets/vo/` + manifest |
+| `tools/pick-direction.mjs` | **pilih arahan video** (format F, tipe visual V, palet, tipografi, layout K, cast suara) dari `tools/direction-map.json` + rotasi `STYLE-LEDGER.md`; `--status`, `--table`, `--record` |
+| `tools/direction-map.json` | SSOT kandidat gaya per kategori topik, 19 palet, 13 tipografi, 9 suara Cartesia + preset cast |
+| `tools/naskah-check.mjs` | gate naskah "bahasa bayi" sebelum VO: panjang kalimat, istilah Inggris, frasa generik, kata/detik |
+| `tools/cartesia-vo.mjs` | TTS Indonesia per baris → `assets/vo/` + manifest; **multi-suara (cast per tokoh)**, pitch lokal (rubberband), cache hash, `--dry-run`, `--review` |
+| `tools/vo-envelope.mjs` | amplop VO → keadaan mulut 12 Hz untuk maskot/tokoh yang bicara |
+| `tools/qa-variety.py` | **gate anti-monoton**: occupancy per scene, layout kembar berurutan, kemiripan look vs video lain (MP4 atau folder snapshot) |
 | `tools/qa-video.mjs` | **gate utama MP4**: spec container, faststart, frame hitam, blok beku, gerak per scene, peak audio. Exit 1 kalau FAIL |
 | `tools/diagnose-motion.mjs` | hitung frame bergerak & motion-collapse (patah-patah) |
 | `tools/measure-frame-cost.mjs` | ukur biaya raster per frame satu komposisi (ms/frame, software raster) |
@@ -244,6 +249,22 @@ per video baru ≈ 40–70 MB (MP4 final 20–50 MB + BGM 2.3 MB + HTML/aset kec
 ## 5. Bikin satu video Reels — step by step
 
 Contoh: brief 60 detik tentang topik apa pun. Ganti `<slug>` sesuai nama file brief.
+
+### Langkah 0 — Mode topik (tanpa brief)
+
+```
+/video-reels apa itu docker?
+/video-reels kisah ayah yang mengajari anaknya naik sepeda
+```
+
+Agent menjalankan Fase A (`.claude/skills/video-reels/references/topik-ke-brief.md`): riset ≥ 3
+sumber → `research.md`, naskah 60–120 detik "bahasa bayi" → `vo-script.json` (dicek
+`naskah-check.mjs`), arahan otomatis → `direction.json` (`pick-direction.mjs`), lalu menulis
+`BRIEF.md` sendiri dan lanjut ke Langkah 3 tanpa berhenti. Kisah keluarga/kehidupan/islami/anak
+otomatis memakai lebih dari satu suara Cartesia. Taksonomi 29 tipe visual + aturan layout:
+`.claude/skills/video-reels/references/peta-gaya.md`.
+
+Langkah 1–2 di bawah hanya untuk **mode brief** (brief dibuat di chat web).
 
 ### Langkah 1 — Buat brief di chat AI
 
@@ -276,9 +297,8 @@ Buka chat web apa pun yang bisa attach file: **ChatGPT, Claude.ai, Gemini, DeepS
    Nama file bebas; `slug` diambil dari nama file saat scaffold, jadi usahakan deskriptif
    (`brief-kenapa-docker-image-membengkak.md`, bukan `brief-1.md`).
 
-Brief yang valid **wajib** punya bagian `Tipe visual (V)` (mis. `V3 + V1`) — agent akan berhenti
-kalau tidak ada, bukan menebak. Kalau model belum mencantumkannya, minta tambahkan dulu di chat
-sebelum disimpan. Contoh brief lengkap ada di `source/`.
+Brief sebaiknya punya bagian `Tipe visual (V)` (mis. `V3 + V1`). Kalau tidak ada, agent memilih
+lewat `tools/pick-direction.mjs` dan menyebutnya di ringkasan. Contoh brief lengkap ada di `source/`.
 
 > **Kenapa pakai chat web, bukan agent coding langsung?** Chat web punya akses web untuk riset
 > fakta/sumber, dan hasilnya bisa kamu review dulu sebagai dokumen markdown sebelum masuk repo.
@@ -288,11 +308,12 @@ sebelum disimpan. Contoh brief lengkap ada di `source/`.
 ### Langkah 2 — Cek rotasi tipe visual
 
 ```bash
-sed -n '1,40p' STYLE-LEDGER.md
+node tools/pick-direction.mjs --status
 ```
 
-Tiga baris terakhir yang terisi = tipe yang **terkunci**. Kalau brief memakai salah satunya,
-agent akan melaporkan konflik; pilih tipe lain atau konfirmasi override secara sadar.
+V dari 3 video terakhir dan keluarga gaya video terakhir **terkunci**. Kalau brief memakai salah
+satunya, agent melaporkan konflik dan memakai kandidat terbuka; override hanya kalau kamu
+menyebut V-nya eksplisit.
 
 ### Langkah 3 — Jalankan pipeline
 

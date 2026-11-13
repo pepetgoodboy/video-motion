@@ -458,6 +458,28 @@ Sembilan tipe ini berasal dari daftar style yang diusulkan pemilik proyek, lalu 
 | V20 | **Comic book** | Halftone, garis tebal, panel, balon bicara, onomatopoeia | Halftone = pola titik `radial-gradient` atau SVG pattern **statis**; outline SVG tebal; balon dan ledakan sebagai SVG; panel = layout split screen dengan slide-snap (M5); "pop" dengan overshoot; C7 hemat di impact; palet terbatas | Cerita berbasis aksi, mitos vs fakta, momen "ledak" | Tanpa karakter atau IP berhak cipta; onomatopoeia tetap dihitung kata (≤ 25 kata per scene) |
 | V21 | **Split-flap** | Papan Solari: huruf dan angka berputar sampai mencapai target | Tiap huruf ≈ 4 elemen (separuh atas dan bawah statis + dua separuh yang melipat `rotateX`, `transform-origin` di tengah, ≈ 0.1 s per langkah); deretan karakter dari awal ke target dihitung dari waktu (tanpa `setInterval`); stagger antar huruf | Status, antrean, jadwal, log, hitung mundur, perbandingan angka | Hitung elemen (mis. 40 huruf ≈ 160 elemen); jeda per langkah ≥ 0.05 s (bagian 15 #12); disarankan `tl.call()` untuk pergantian karakter — **terbukti jalan di render**; bukan untuk paragraf |
 
+#### Tipe tambahan V22-V29 (10 Nov 2026)
+
+Dari riset taksonomi gaya animasi explainer/2D. Card eksekusi di
+`.claude/skills/video-reels/styles/V22…V29`. Teknik memakai primitif yang sudah terverifikasi
+(SVG draw-on, `steps()`, transform, PNG statis); belum ada render nyata per tipe.
+
+| Kode | Tipe | Ciri | Cocok untuk |
+|---|---|---|---|
+| V22 | **Whiteboard / papan kapur** | pena menggambar di papan panjang, kamera turun | konsep langkah demi langkah, tutorial ringan |
+| V23 | **Flat vector + maskot** | satu maskot orisinal berakting (rig SVG, mulut dari amplop VO) | konsep "bahasa bayi", kesehatan, produk |
+| V24 | **Buku cerita** | ilustrasi lembut cat air pra-render, halaman dibalik | kisah keluarga, kisah islami anak, sains anak |
+| V25 | **Siluet / kelir wayang** | boneka bersendi hitam di kelir bercahaya | sejarah, legenda (bukan untuk menggambarkan Nabi) |
+| V26 | **Pixel art 8-bit** | sprite grid, gerak bertahap, HUD | konsep sebagai level game, tutorial |
+| V27 | **Infografis / data story** | grafik dibangun, satu nilai disorot | uang, statistik, perbandingan angka |
+| V28 | **Peta / perjalanan** | rute tergambar, pin, kamera terbang | sejarah, perjalanan, aliran data |
+| V29 | **Low-poly / faset** | segitiga datar shading tetap, morph antar bentuk | sains, alam, transformasi |
+
+**Sumbu baru di luar V:** format narasi (F1-F10) dan layout per scene (K0-K15, dengan K0 "slide"
+dibatasi 1 scene). Definisi + aturan: `.claude/skills/video-reels/references/peta-gaya.md`.
+Kalau Claude Code bisa menjalankan repo, pilihan V/P/T/K/suara dihitung
+`node tools/pick-direction.mjs` — itu yang menang atas pilihan manual di brief.
+
 #### Varian dan nama populer
 Nama populer berikut **tidak diberi kode baru**; mereka varian dari tipe yang sudah ada. Dalam aturan rotasi, varian dihitung sebagai tipe yang sama (mis. V4 grain dan V4 VHS dianggap satu tipe).
 

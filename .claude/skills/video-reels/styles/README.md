@@ -1,7 +1,8 @@
-# Style Cards — kontrak eksekusi Tipe Visual (V1–V21)
+# Style Cards — kontrak eksekusi Tipe Visual (V1–V29)
 
-Brief menentukan **kode V** (MASTER-PROMPT bagian 12.1). Folder ini menerjemahkan kode itu
-jadi resep HyperFrames yang bisa langsung dieksekusi. Tanpa card ini, "V2 cutout craft" cuma
+Kode V datang dari `videos/<slug>/direction.json` (mode topik, dipilih `tools/pick-direction.mjs`)
+atau dari brief (MASTER-PROMPT bagian 12.1). Folder ini menerjemahkan kode itu jadi resep
+HyperFrames yang bisa langsung dieksekusi. Tanpa card ini, "V2 cutout craft" cuma
 satu baris prosa dan agent akan jatuh kembali ke look default.
 
 ## Cara pakai
@@ -19,7 +20,9 @@ satu baris prosa dan agent akan jatuh kembali ke look default.
 
 Video yang gagal terasa beda bukan karena palet/font sama — palet dan font sudah diganti tiap
 video dan tetap terasa sama. Yang tidak pernah berubah adalah **enam sumbu di bawah**. Card
-mengunci keenamnya.
+mengunci keenamnya. **Card tidak mengatur layout** — itu sumbu K terpisah (diagnosis 10 Nov:
+K0 "slide" dominan di 5/8 video walau V-nya berbeda). Aturan K ada di
+`../references/peta-gaya.md` §5 dan berlaku untuk semua card.
 
 | Sumbu | Default yang harus dilawan |
 |---|---|
@@ -85,6 +88,19 @@ Jangan bangun dari nol kalau ada rule yang persis. Muat rule-nya, restyle ke pal
 | V19 | `discrete-text-sequence`, `dynamic-content-sequencing` |
 | V20 | `kinetic-beat-slam`, `split-tilt-cards`, `scale-swap-transition` |
 | V21 | `kinetic-beat-slam`, `discrete-text-sequence` |
+| V22 | `svg-path-draw`, `css-marker-patterns`, `viewport-change` · catalog `whiteboard-ink`, `hw-*` |
+| V23 | `spring-pop-entrance`, `press-release-spring`, `physics-press-reaction`, `nudge-curve` · catalog `lottie-character-walk` |
+| V24 | `viewport-change`, `sine-wave-loop`, `depth-scatter-assemble` · catalog `hw-boil`, `scroll-camera-story` |
+| V25 | `nudge-curve`, `scale-swap-transition`, `viewport-change` |
+| V26 | `discrete-text-sequence`, `counting-dynamic-scale`, `particle-burst` · catalog `grid-pixelate-wipe` |
+| V27 | `stat-bars-and-fills`, `counting-dynamic-scale`, `chart-scrub-readout` · catalog `chart-story` |
+| V28 | `svg-path-draw`, `coordinate-target-zoom`, `multi-phase-camera` · catalog `world-map` |
+| V29 | `depth-scatter-assemble`, `center-outward-expansion`, `card-morph-anchor` · catalog `facet-morph` |
+
+Nama di kolom kiri = rules di `~/.claude/skills/hyperframes-animation/rules/`. Nama "catalog" =
+item registry (`npx --yes hyperframes@0.8.169 catalog --query "<efek>" --json`, lalu
+`add <nama>`). Registry **tersedia** (448 item, dicek 10 Nov 2026); kebanyakan blok 1920×1080 —
+ambil logikanya, susun ulang ke 1080×1920.
 
 > Peta di atas adalah **titik awal**, bukan jaminan. Blok catalog yang dimuat wajib di-retint
 > ke palet brief, dan untuk V13–V21 wajib dicek terhadap batas budget di `FEASIBILITY.md` —
@@ -108,14 +124,17 @@ normal** di renderer HyperFrames (0.8.169 memanggil `timeline.seek(t, false)` di
 
 ## Rotasi
 
-Aturan di brief (MASTER-PROMPT 12.1) tetap berlaku: tipe V tidak boleh sama dengan **3 video
-terakhir**. Catat di `STYLE-LEDGER.md` (root repo) setiap selesai render — kolom: tanggal, slug,
-V utama, V aksen, bahasa gerak, tekstur, apakah pipeline blend dipakai.
+Dihitung `node tools/pick-direction.mjs --status` dari `STYLE-LEDGER.md` — jangan dihitung
+manual. V utama ≠ 3 video terakhir; keluarga gaya (`family` di `tools/direction-map.json`)
+≠ video terakhir. Setelah render, tambah baris lewat `--record`.
 
 **Varian dihitung tipe yang sama** (MASTER-PROMPT §12.1 tabel varian): Retro VHS = V4,
 Kinetic Type = V1, Paper Cutout = V2, Hand-Drawn = V5, Clay 3D = V7. Jangan membuat kode V baru
 untuk varian.
 
-Pool yang tersedia setelah card ini lengkap: **V1–V21**. Sembilan tipe terakhir (V13–V21)
-resepnya sudah diukur — lihat `FEASIBILITY.md` untuk angka biaya dan hasil verifikasi
-determinisme.
+Pool: **V1–V29**. V13–V21 resepnya sudah diukur (`FEASIBILITY.md`). V22–V29 (10 Nov 2026)
+memakai primitif yang sama (SVG draw-on, `steps()`, transform, PNG statis) — belum ada render
+nyata per tipe; video pertama tiap tipe baru = uji kelayakannya, catat hasil di ledger.
+
+Varian tambahan (tidak diberi kode baru): Chalkboard & Line art = V22 · Origami = V2 ·
+Swiss/Bauhaus & Memphis = V9 · Synthwave/Vaporwave = V15 (+V4) · Risograph = V3/V20.

@@ -1,15 +1,19 @@
 # CLAUDE.md — Video Motion (HyperFrames Reels)
 
-Project ini **khusus** membuat video Reels/TikTok 9:16 dari brief markdown, memakai HyperFrames
+Project ini **khusus** membuat video Reels/TikTok 9:16 dari **topik** atau brief markdown, memakai HyperFrames
 (HTML + CSS + GSAP timeline `paused`), dirender ke MP4.
 
-> Jangan bawa aturan dari project lain. Project ini cuma punya satu tujuan: brief → MP4.
+> Jangan bawa aturan dari project lain. Project ini cuma punya satu tujuan: topik/brief → MP4.
 
 ---
 
 ## Alur kerja
 
-1. User memberi **path brief** `.md` (biasanya di `source/`).
+0. **Mode topik** (`/video-reels apa itu docker?`): riset ≥ 3 sumber → naskah bahasa bayi
+   60–120 s → arahan otomatis (`tools/pick-direction.mjs`) → VO (multi-suara untuk kisah) →
+   agent menulis `videos/<slug>/BRIEF.md` sendiri → lanjut langkah 2. Detail:
+   `.claude/skills/video-reels/references/topik-ke-brief.md`.
+1. **Mode brief:** user memberi **path brief** `.md` (biasanya di `source/`).
 2. Baca brief sampai habis. Brief adalah **sumber kebenaran desain** — jangan improvisasi.
 3. Scaffold project baru di `videos/<slug>/`.
 4. Siapkan font, BGM, SFX, VO (Cartesia).
@@ -17,13 +21,23 @@ Project ini **khusus** membuat video Reels/TikTok 9:16 dari brief markdown, mema
 6. `lint` → `check` → `snapshot` → perbaiki.
 7. Render 120fps → blend 60fps → verifikasi frame dari MP4.
 
-Kalau user cuma bilang "buatkan video X", cari briefnya di `source/` dulu.
+Kalau user cuma bilang "buatkan video X", cari briefnya di `source/` dulu; tidak ada → mode topik.
+
+### Anti-monoton (wajib, dari diagnosis 10 Nov 2026)
+
+12 video pertama terasa sama walau kode V-nya beda: 5/8 didominasi layout **K0 "slide"**
+(judul pojok + kotak kecil + label), median occupancy 0,05–0,18. Karena itu:
+
+- Arahan (F · V · P · T · K · suara) **dipilih script**, bukan dibaca manual dari ledger.
+- Layout K per scene: ≥ 4 berbeda, tidak berurutan, K0 ≤ 1 (`references/peta-gaya.md` §5).
+- `python3 tools/qa-variety.py` di snapshot (pra-render) dan MP4 — FAIL = perbaiki, bukan lapor.
+- Mesin tetap HyperFrames; Remotion **tidak** dipasang di repo ini (alasan: `peta-gaya.md` §7).
 
 ### Dua mode: faceless vs presenter
 
 | Mode | Skill | Input | Kapan |
 |---|---|---|---|
-| **Faceless** (default) | `/video-reels` | 1 brief `.md` | tidak ada orang di frame |
+| **Faceless** (default) | `/video-reels` | topik **atau** 1 brief `.md` | tidak ada orang di frame |
 | **Presenter** | `/video-reels-presenter` | brief `.md` **+ folder footage** | ada orang nyata di frame |
 
 Mode presenter memakai seluruh pipeline yang sama; skill di
@@ -105,9 +119,10 @@ ffmpeg -v error -i out.mp4 -vf "scale=108:192,format=gray" -f rawvideo -y qc/g.r
 # frame beku: diff antar frame < 0.02
 ```
 
-**Kalau user bilang "patah-patah", TANYA PLAYER-NYA DULU.** Windows Media Player tersendat memutar
-1080×1920@60fps dan terlihat seperti patah. VLC dan Chrome lancar. Ini sudah terjadi sekali dan
-menghabiskan belasan render sia-sia.
+**Kalau user bilang "patah-patah": audit interval `steps()` DULU** (durasi/n; gerak yang
+lebih dari 1 s harus ≤ 50 ms per langkah). Ini akar masalah yang terkonfirmasi di HP juga — menyalahkan
+player adalah tebakan salah yang pernah terjadi. Baru setelah interval bersih, cek player
+(Windows Media Player memang tersendat di 1080×1920@60fps; VLC/Chrome lancar).
 
 ---
 
@@ -117,8 +132,11 @@ menghabiskan belasan render sia-sia.
 video-motion/
 ├── source/              # brief .md (input dari Claude web)
 ├── shared/              # font + SFX lintas video
-├── tools/               # script bantu (cartesia-vo.mjs, diagnose-motion.mjs)
+├── tools/               # script bantu: pick-direction.mjs + direction-map.json (arahan),
+│                        #   cartesia-vo.mjs (VO multi-suara), naskah-check.mjs, qa-variety.py,
+│                        #   vo-envelope.mjs, qa-video.mjs, diagnose-motion.mjs
 └── videos/<slug>/       # satu project HyperFrames per video
+    ├── research.md / direction.json / vo-script.json / BRIEF.md   # mode topik
     ├── index.html
     ├── compositions/frames/
     ├── assets/{fonts,bgm,sfx,vo}/
