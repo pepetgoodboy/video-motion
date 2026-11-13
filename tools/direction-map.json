@@ -1,0 +1,2415 @@
+{
+  "_doc": "SSOT kandidat arahan video. Dibaca tools/pick-direction.mjs. Penjelasan tiap sumbu + riset: .claude/skills/video-reels/references/peta-gaya.md. Urutan di list = urutan kecocokan (paling cocok duluan).",
+  "version": 1,
+  "rotation": {
+    "v_window": 3,
+    "family_window": 1,
+    "palette_window": 2,
+    "typography_window": 2,
+    "layout_window": 1,
+    "format_window": 1
+  },
+  "styles": {
+    "V1": {
+      "name": "Kinetic typography",
+      "family": "tipografi",
+      "card": "V1-kinetic-typography.md",
+      "layouts": [
+        "K3",
+        "K11",
+        "K14",
+        "K4"
+      ],
+      "palettes": [
+        "P5",
+        "P2",
+        "P6",
+        "P8"
+      ],
+      "typography": [
+        "T1",
+        "T2",
+        "T5"
+      ],
+      "accents": [
+        "V9",
+        "V11",
+        "V21"
+      ],
+      "cost": "ringan"
+    },
+    "V2": {
+      "name": "Cutout craft",
+      "family": "kertas",
+      "card": "V2-cutout-craft.md",
+      "layouts": [
+        "K1",
+        "K6",
+        "K2",
+        "K7"
+      ],
+      "palettes": [
+        "P9",
+        "P4",
+        "P14",
+        "P7"
+      ],
+      "typography": [
+        "T6",
+        "T3",
+        "T10"
+      ],
+      "accents": [
+        "V6",
+        "V1",
+        "V5"
+      ],
+      "cost": "ringan"
+    },
+    "V3": {
+      "name": "Mixed media collage",
+      "family": "cetak",
+      "card": "V3-mixed-media-collage.md",
+      "layouts": [
+        "K4",
+        "K9",
+        "K3",
+        "K2"
+      ],
+      "palettes": [
+        "P4",
+        "P6",
+        "P1"
+      ],
+      "typography": [
+        "T2",
+        "T3"
+      ],
+      "accents": [
+        "V1",
+        "V20"
+      ],
+      "cost": "sedang"
+    },
+    "V4": {
+      "name": "Analog / retro",
+      "family": "retro",
+      "card": "V4-analog-retro.md",
+      "layouts": [
+        "K8",
+        "K1",
+        "K10",
+        "K3"
+      ],
+      "palettes": [
+        "P2",
+        "P6",
+        "P7"
+      ],
+      "typography": [
+        "T2",
+        "T4"
+      ],
+      "accents": [
+        "V19",
+        "V11"
+      ],
+      "cost": "sedang"
+    },
+    "V5": {
+      "name": "Hand-drawn / stop-motion",
+      "family": "garis",
+      "card": "V5-hand-drawn-stopmotion.md",
+      "layouts": [
+        "K1",
+        "K2",
+        "K5",
+        "K12"
+      ],
+      "palettes": [
+        "P4",
+        "P10",
+        "P14",
+        "P11"
+      ],
+      "typography": [
+        "T8",
+        "T7",
+        "T3"
+      ],
+      "accents": [
+        "V2",
+        "V22"
+      ],
+      "cost": "ringan"
+    },
+    "V6": {
+      "name": "Tactile / sensory",
+      "family": "lembut",
+      "card": "V6-tactile-sensory.md",
+      "layouts": [
+        "K2",
+        "K15",
+        "K9"
+      ],
+      "palettes": [
+        "P10",
+        "P14",
+        "P5"
+      ],
+      "typography": [
+        "T12",
+        "T7",
+        "T6"
+      ],
+      "accents": [
+        "V7",
+        "V23"
+      ],
+      "cost": "ringan"
+    },
+    "V7": {
+      "name": "Stylised 3D / clay",
+      "family": "lembut",
+      "card": "V7-stylised-3d.md",
+      "layouts": [
+        "K2",
+        "K15",
+        "K7"
+      ],
+      "palettes": [
+        "P10",
+        "P14",
+        "P19"
+      ],
+      "typography": [
+        "T12",
+        "T5"
+      ],
+      "accents": [
+        "V6",
+        "V23"
+      ],
+      "cost": "sedang"
+    },
+    "V8": {
+      "name": "Liquid glass (tiruan)",
+      "family": "cahaya",
+      "card": "V8-liquid-glass.md",
+      "layouts": [
+        "K8",
+        "K2",
+        "K9"
+      ],
+      "palettes": [
+        "P16",
+        "P8"
+      ],
+      "typography": [
+        "T4",
+        "T13"
+      ],
+      "accents": [
+        "V10",
+        "V17"
+      ],
+      "cost": "sedang"
+    },
+    "V9": {
+      "name": "Bold minimalism",
+      "family": "tipografi",
+      "card": "V9-bold-minimalism.md",
+      "layouts": [
+        "K3",
+        "K2",
+        "K11",
+        "K4"
+      ],
+      "palettes": [
+        "P5",
+        "P2",
+        "P8"
+      ],
+      "typography": [
+        "T1",
+        "T2",
+        "T5"
+      ],
+      "accents": [
+        "V1",
+        "V21"
+      ],
+      "cost": "ringan"
+    },
+    "V10": {
+      "name": "UI / product motion",
+      "family": "layar",
+      "card": "V10-ui-product-motion.md",
+      "layouts": [
+        "K8",
+        "K14",
+        "K5",
+        "K9"
+      ],
+      "palettes": [
+        "P1",
+        "P8",
+        "P16"
+      ],
+      "typography": [
+        "T4",
+        "T13",
+        "T1"
+      ],
+      "accents": [
+        "V2",
+        "V21",
+        "V22"
+      ],
+      "cost": "ringan"
+    },
+    "V11": {
+      "name": "Grunge / street",
+      "family": "cetak",
+      "card": "V11-grunge-street.md",
+      "layouts": [
+        "K3",
+        "K4",
+        "K2"
+      ],
+      "palettes": [
+        "P2",
+        "P6",
+        "P5"
+      ],
+      "typography": [
+        "T2",
+        "T6"
+      ],
+      "accents": [
+        "V1",
+        "V20"
+      ],
+      "cost": "ringan"
+    },
+    "V12": {
+      "name": "Surreal / absurd",
+      "family": "surreal",
+      "card": "V12-surreal-absurd.md",
+      "layouts": [
+        "K1",
+        "K2",
+        "K7"
+      ],
+      "palettes": [
+        "P9",
+        "P14",
+        "P17"
+      ],
+      "typography": [
+        "T10",
+        "T3"
+      ],
+      "accents": [
+        "V14",
+        "V13"
+      ],
+      "cost": "sedang"
+    },
+    "V13": {
+      "name": "Particles",
+      "family": "cair",
+      "card": "V13-particles.md",
+      "layouts": [
+        "K2",
+        "K7",
+        "K3",
+        "K1"
+      ],
+      "palettes": [
+        "P3",
+        "P16",
+        "P5"
+      ],
+      "typography": [
+        "T5",
+        "T13"
+      ],
+      "accents": [
+        "V1",
+        "V9"
+      ],
+      "cost": "ringan"
+    },
+    "V14": {
+      "name": "Liquid morph",
+      "family": "cair",
+      "card": "V14-liquid-morph.md",
+      "layouts": [
+        "K2",
+        "K7",
+        "K4"
+      ],
+      "palettes": [
+        "P14",
+        "P10",
+        "P16"
+      ],
+      "typography": [
+        "T12",
+        "T10"
+      ],
+      "accents": [
+        "V6",
+        "V13"
+      ],
+      "cost": "ringan"
+    },
+    "V15": {
+      "name": "Neon glow",
+      "family": "cahaya",
+      "card": "V15-neon-glow.md",
+      "layouts": [
+        "K3",
+        "K1",
+        "K8"
+      ],
+      "palettes": [
+        "P18"
+      ],
+      "typography": [
+        "T5",
+        "T1"
+      ],
+      "accents": [
+        "V4",
+        "V19"
+      ],
+      "cost": "ringan",
+      "min_occ": 0.12
+    },
+    "V16": {
+      "name": "Y2K chrome",
+      "family": "cahaya",
+      "card": "V16-y2k-chrome.md",
+      "layouts": [
+        "K3",
+        "K2",
+        "K14"
+      ],
+      "palettes": [
+        "P18",
+        "P16"
+      ],
+      "typography": [
+        "T5",
+        "T1"
+      ],
+      "accents": [
+        "V1",
+        "V17"
+      ],
+      "cost": "sedang"
+    },
+    "V17": {
+      "name": "Holographic",
+      "family": "cahaya",
+      "card": "V17-holographic.md",
+      "layouts": [
+        "K2",
+        "K9",
+        "K14"
+      ],
+      "palettes": [
+        "P16",
+        "P18"
+      ],
+      "typography": [
+        "T5",
+        "T4"
+      ],
+      "accents": [
+        "V16",
+        "V8"
+      ],
+      "cost": "berat"
+    },
+    "V18": {
+      "name": "Isometric",
+      "family": "dimensi",
+      "card": "V18-isometric.md",
+      "layouts": [
+        "K6",
+        "K7",
+        "K5",
+        "K2"
+      ],
+      "palettes": [
+        "P3",
+        "P8",
+        "P17"
+      ],
+      "typography": [
+        "T5",
+        "T13",
+        "T4"
+      ],
+      "accents": [
+        "V21",
+        "V13"
+      ],
+      "cost": "ringan"
+    },
+    "V19": {
+      "name": "ASCII art",
+      "family": "layar",
+      "card": "V19-ascii-art.md",
+      "layouts": [
+        "K8",
+        "K3",
+        "K2"
+      ],
+      "palettes": [
+        "P3",
+        "P5",
+        "P2"
+      ],
+      "typography": [
+        "T2",
+        "T9"
+      ],
+      "accents": [
+        "V9",
+        "V15"
+      ],
+      "cost": "ringan"
+    },
+    "V20": {
+      "name": "Comic book",
+      "family": "cetak",
+      "card": "V20-comic-book.md",
+      "layouts": [
+        "K4",
+        "K9",
+        "K15",
+        "K3"
+      ],
+      "palettes": [
+        "P6",
+        "P2"
+      ],
+      "typography": [
+        "T6",
+        "T2"
+      ],
+      "accents": [
+        "V1",
+        "V3"
+      ],
+      "cost": "ringan"
+    },
+    "V21": {
+      "name": "Split-flap",
+      "family": "tipografi",
+      "card": "V21-split-flap.md",
+      "layouts": [
+        "K11",
+        "K10",
+        "K3"
+      ],
+      "palettes": [
+        "P1",
+        "P8",
+        "P2"
+      ],
+      "typography": [
+        "T4",
+        "T13"
+      ],
+      "accents": [
+        "V9",
+        "V1"
+      ],
+      "cost": "ringan"
+    },
+    "V22": {
+      "name": "Whiteboard / papan kapur",
+      "family": "garis",
+      "card": "V22-whiteboard.md",
+      "layouts": [
+        "K1",
+        "K5",
+        "K2",
+        "K7",
+        "K12"
+      ],
+      "palettes": [
+        "P11",
+        "P12"
+      ],
+      "typography": [
+        "T8",
+        "T13"
+      ],
+      "accents": [
+        "V5",
+        "V23"
+      ],
+      "cost": "ringan",
+      "min_occ": 0.12
+    },
+    "V23": {
+      "name": "Flat vector + maskot",
+      "family": "karakter",
+      "card": "V23-flat-mascot.md",
+      "layouts": [
+        "K15",
+        "K1",
+        "K2",
+        "K12",
+        "K13"
+      ],
+      "palettes": [
+        "P10",
+        "P14",
+        "P16",
+        "P17"
+      ],
+      "typography": [
+        "T12",
+        "T7"
+      ],
+      "accents": [
+        "V22",
+        "V27",
+        "V6"
+      ],
+      "cost": "sedang"
+    },
+    "V24": {
+      "name": "Buku cerita (storybook)",
+      "family": "kertas-lukis",
+      "card": "V24-storybook.md",
+      "layouts": [
+        "K1",
+        "K15",
+        "K6",
+        "K13"
+      ],
+      "palettes": [
+        "P14",
+        "P10",
+        "P17"
+      ],
+      "typography": [
+        "T10",
+        "T7"
+      ],
+      "accents": [
+        "V5",
+        "V2"
+      ],
+      "cost": "sedang"
+    },
+    "V25": {
+      "name": "Siluet / kelir wayang",
+      "family": "siluet",
+      "card": "V25-silhouette.md",
+      "layouts": [
+        "K1",
+        "K6",
+        "K15",
+        "K10"
+      ],
+      "palettes": [
+        "P13"
+      ],
+      "typography": [
+        "T11",
+        "T10"
+      ],
+      "accents": [
+        "V2",
+        "V28"
+      ],
+      "cost": "ringan"
+    },
+    "V26": {
+      "name": "Pixel art 8-bit",
+      "family": "retro",
+      "card": "V26-pixel-art.md",
+      "layouts": [
+        "K1",
+        "K6",
+        "K13",
+        "K11"
+      ],
+      "palettes": [
+        "P15"
+      ],
+      "typography": [
+        "T9"
+      ],
+      "accents": [
+        "V19",
+        "V21"
+      ],
+      "cost": "ringan"
+    },
+    "V27": {
+      "name": "Infografis / data story",
+      "family": "data",
+      "card": "V27-infographic.md",
+      "layouts": [
+        "K11",
+        "K9",
+        "K4",
+        "K5"
+      ],
+      "palettes": [
+        "P16",
+        "P7",
+        "P1"
+      ],
+      "typography": [
+        "T13",
+        "T2",
+        "T4"
+      ],
+      "accents": [
+        "V21",
+        "V23"
+      ],
+      "cost": "ringan"
+    },
+    "V28": {
+      "name": "Peta / perjalanan",
+      "family": "data",
+      "card": "V28-map-journey.md",
+      "layouts": [
+        "K6",
+        "K13",
+        "K10",
+        "K1"
+      ],
+      "palettes": [
+        "P17",
+        "P3"
+      ],
+      "typography": [
+        "T11",
+        "T3",
+        "T10"
+      ],
+      "accents": [
+        "V27",
+        "V2"
+      ],
+      "cost": "sedang"
+    },
+    "V29": {
+      "name": "Low-poly / faset",
+      "family": "dimensi",
+      "card": "V29-low-poly.md",
+      "layouts": [
+        "K1",
+        "K2",
+        "K7"
+      ],
+      "palettes": [
+        "P19"
+      ],
+      "typography": [
+        "T5",
+        "T12"
+      ],
+      "accents": [
+        "V13",
+        "V18"
+      ],
+      "cost": "ringan"
+    }
+  },
+  "formats": {
+    "F1": {
+      "name": "Analogi bahasa bayi",
+      "layouts": [
+        "K2",
+        "K1",
+        "K7",
+        "K15",
+        "K3"
+      ],
+      "multi_voice": false,
+      "beats": [
+        "hook: pertanyaan polos / kontradiksi",
+        "dunia sehari-hari yang mirip",
+        "masalahnya",
+        "nama teknisnya (baru disebut di sini)",
+        "cara kerja 3 langkah",
+        "contoh nyata",
+        "salah kaprah yang umum",
+        "rangkuman 1 kalimat"
+      ]
+    },
+    "F2": {
+      "name": "Kisah bertokoh",
+      "layouts": [
+        "K1",
+        "K15",
+        "K12",
+        "K6",
+        "K13"
+      ],
+      "multi_voice": true,
+      "beats": [
+        "pembuka dunia + tokoh",
+        "keinginan / masalah tokoh",
+        "konflik memuncak",
+        "titik balik",
+        "resolusi",
+        "hikmah 1 kalimat (tanpa menggurui)"
+      ]
+    },
+    "F3": {
+      "name": "Duel A vs B",
+      "layouts": [
+        "K4",
+        "K11",
+        "K9",
+        "K3"
+      ],
+      "multi_voice": false,
+      "beats": [
+        "hook: framing 'A atau B' yang salah",
+        "kenalan A (analogi)",
+        "kenalan B (analogi)",
+        "adu di 3 kondisi nyata",
+        "kelemahan jujur masing-masing",
+        "kapan pakai yang mana"
+      ]
+    },
+    "F4": {
+      "name": "Tutorial langkah",
+      "layouts": [
+        "K8",
+        "K5",
+        "K9",
+        "K14"
+      ],
+      "multi_voice": false,
+      "beats": [
+        "cold open hasil akhir",
+        "kenapa butuh",
+        "langkah 1..n + alasan urutan",
+        "jebakan umum",
+        "rangkuman papan progres"
+      ]
+    },
+    "F5": {
+      "name": "Mitos vs fakta",
+      "layouts": [
+        "K3",
+        "K4",
+        "K2",
+        "K11"
+      ],
+      "multi_voice": false,
+      "beats": [
+        "mitos yang dipercaya",
+        "kenapa terdengar masuk akal",
+        "bukti yang membalik",
+        "fakta sebenarnya",
+        "cara mengingat"
+      ]
+    },
+    "F6": {
+      "name": "Daftar / hitung mundur",
+      "layouts": [
+        "K11",
+        "K9",
+        "K3",
+        "K2"
+      ],
+      "multi_voice": false,
+      "beats": [
+        "janji jumlah (n hal)",
+        "item n..1, tiap item 1 visual kuat",
+        "item terakhir = kejutan",
+        "rangkuman grid"
+      ]
+    },
+    "F7": {
+      "name": "Sebab-akibat 'bagaimana kalau'",
+      "layouts": [
+        "K5",
+        "K7",
+        "K1",
+        "K14"
+      ],
+      "multi_voice": false,
+      "beats": [
+        "pemicu kecil",
+        "rantai kejadian 1..n",
+        "titik kritis",
+        "akibat besar",
+        "cara mencegah / pelajaran"
+      ]
+    },
+    "F8": {
+      "name": "POV objek ('aku adalah…')",
+      "layouts": [
+        "K13",
+        "K1",
+        "K6",
+        "K7"
+      ],
+      "multi_voice": false,
+      "beats": [
+        "aku memperkenalkan diri",
+        "perjalananku dimulai",
+        "rintangan 1..n",
+        "tujuan tercapai",
+        "apa artinya buat kamu"
+      ]
+    },
+    "F9": {
+      "name": "Tanya-jawab dua tokoh",
+      "layouts": [
+        "K12",
+        "K15",
+        "K2"
+      ],
+      "multi_voice": true,
+      "beats": [
+        "si penanya bingung",
+        "penjawab pakai analogi",
+        "penanya salah paham lucu",
+        "dibetulkan",
+        "penanya menyimpulkan sendiri"
+      ]
+    },
+    "F10": {
+      "name": "Timeline / dokumenter",
+      "layouts": [
+        "K10",
+        "K6",
+        "K1",
+        "K14"
+      ],
+      "multi_voice": false,
+      "beats": [
+        "momen puncak (cold open)",
+        "awal mula",
+        "titik-titik penting",
+        "puncak",
+        "warisan / sekarang"
+      ]
+    },
+    "F11": {
+      "name": "Kabar kilat (berita)",
+      "layouts": [
+        "K11",
+        "K10",
+        "K3",
+        "K4"
+      ],
+      "multi_voice": false,
+      "beats": [
+        "apa yang terjadi (1 kalimat + tanggal)",
+        "siapa & di mana (tanpa menggambar orangnya)",
+        "kronologi singkat",
+        "status konfirmasi: resmi / dilaporkan / belum jelas",
+        "kenapa ini penting buat penonton",
+        "apa selanjutnya / yang perlu dicek"
+      ]
+    },
+    "F12": {
+      "name": "Perumpamaan / renungan",
+      "layouts": [
+        "K1",
+        "K2",
+        "K15",
+        "K3"
+      ],
+      "multi_voice": true,
+      "beats": [
+        "gambaran sehari-hari yang sederhana",
+        "kejadian kecil yang terasa biasa",
+        "momen dialog singkat antar tokoh",
+        "pembalikan makna (ternyata…)",
+        "'kita juga sering begitu' — cermin ke penonton",
+        "satu kalimat hikmah + pertanyaan untuk direnungkan"
+      ]
+    },
+    "F13": {
+      "name": "Sketsa komedi",
+      "layouts": [
+        "K12",
+        "K15",
+        "K4",
+        "K1"
+      ],
+      "multi_voice": true,
+      "beats": [
+        "setup situasi yang dikenal semua orang",
+        "tokoh A salah paham / punya rencana konyol",
+        "eskalasi 2–3 langkah",
+        "punchline (pembalikan)",
+        "tag: lelucon susulan singkat"
+      ]
+    },
+    "F14": {
+      "name": "Cerita seram",
+      "layouts": [
+        "K1",
+        "K13",
+        "K6",
+        "K3"
+      ],
+      "multi_voice": true,
+      "beats": [
+        "suasana normal + tempat spesifik",
+        "tanda aneh pertama (kecil)",
+        "eskalasi — tokoh mulai sadar",
+        "puncak ketegangan tanpa gore",
+        "penutup menggantung / twist",
+        "label: fiksi / cerita rakyat"
+      ]
+    }
+  },
+  "layouts": {
+    "K0": "Slide: judul pojok + panel/kotak + label mono. ANTI-POLA — maks 1 scene per video",
+    "K1": "Panggung penuh: dunia ilustrasi full-bleed, protagonis di dalamnya, teks = caption kecil",
+    "K2": "Objek pahlawan: satu objek raksasa (>= 55% lebar) di tengah, teks menempel ke objek",
+    "K3": "Poster tipografi: kata raksasa >= 70% lebar layar, gambar minim",
+    "K4": "Belah atas-bawah: A vs B ditumpuk vertikal (bukan kiri-kanan)",
+    "K5": "Alur vertikal: diagram mengalir atas ke bawah, kamera menyusur (C3)",
+    "K6": "Peta / denah: kamera menyusuri lokasi dunia visual",
+    "K7": "Macro -> micro: kamera masuk ke dalam komponen lalu keluar",
+    "K8": "Layar penuh perangkat: terminal/chat/HP memenuhi frame, bukan kotak kecil",
+    "K9": "Grid / bento: 4-9 item, satu menyala bergantian",
+    "K10": "Timeline vertikal",
+    "K11": "Angka raksasa + data",
+    "K12": "Percakapan: gelembung dialog antar tokoh",
+    "K13": "POV: kita melihat dari mata protagonis",
+    "K14": "Cold open hasil akhir lalu dibongkar",
+    "K15": "Close-up karakter: maskot setengah badan besar bereaksi, teks di gelembung/samping"
+  },
+  "categories": {
+    "tech-berita": {
+      "group": "Teknologi",
+      "desc": "rilis produk, kabar AI, gadget baru (bukan keamanan)",
+      "formats": [
+        "F11",
+        "F3",
+        "F5"
+      ],
+      "styles": [
+        "V10",
+        "V8",
+        "V16",
+        "V17",
+        "V21",
+        "V1",
+        "V27"
+      ],
+      "voice": "narator-berita",
+      "music": "sleek tech pulse, modern",
+      "time_sensitive": true
+    },
+    "tech-keamanan": {
+      "desc": "serangan, kerentanan, berita keamanan",
+      "formats": [
+        "F7",
+        "F10",
+        "F5"
+      ],
+      "styles": [
+        "V4",
+        "V11",
+        "V15",
+        "V19",
+        "V27",
+        "V28",
+        "V1",
+        "V3",
+        "V20"
+      ],
+      "voice": "narator-dokumenter",
+      "music": "tense dark pulse, low synth",
+      "batas_konten": true,
+      "group": "Teknologi"
+    },
+    "tech-konsep": {
+      "desc": "apa itu X, kenapa X, cara kerja X (Docker, API, DNS, RAM)",
+      "formats": [
+        "F1",
+        "F8",
+        "F7"
+      ],
+      "styles": [
+        "V23",
+        "V22",
+        "V18",
+        "V2",
+        "V7",
+        "V13",
+        "V14",
+        "V29",
+        "V26",
+        "V6",
+        "V5",
+        "V9",
+        "V12"
+      ],
+      "voice": "narator-tech",
+      "music": "playful curious light electronic, plucky, warm",
+      "group": "Teknologi"
+    },
+    "tech-perbandingan": {
+      "desc": "A vs B, pilih yang mana",
+      "formats": [
+        "F3",
+        "F5"
+      ],
+      "styles": [
+        "V3",
+        "V20",
+        "V9",
+        "V27",
+        "V21",
+        "V10",
+        "V8",
+        "V4"
+      ],
+      "voice": "narator-tech",
+      "music": "punchy sporty build, confident",
+      "group": "Teknologi"
+    },
+    "tech-tutorial": {
+      "desc": "cara melakukan X, command, langkah",
+      "formats": [
+        "F4",
+        "F6",
+        "F1"
+      ],
+      "styles": [
+        "V10",
+        "V19",
+        "V22",
+        "V26",
+        "V5",
+        "V9",
+        "V21",
+        "V8",
+        "V18"
+      ],
+      "voice": "narator-tech",
+      "music": "focused lo-fi groove, steady",
+      "group": "Teknologi"
+    },
+    "bahasa-asing": {
+      "group": "Edukasi",
+      "desc": "kosakata, idiom, salah kaprah bahasa Inggris/Arab/Jepang",
+      "formats": [
+        "F6",
+        "F5",
+        "F9"
+      ],
+      "styles": [
+        "V1",
+        "V21",
+        "V9",
+        "V22",
+        "V20",
+        "V3"
+      ],
+      "voice": "cast-bahasa",
+      "music": "upbeat light pop, minimal"
+    },
+    "edukasi-sekolah": {
+      "group": "Edukasi",
+      "desc": "matematika, fisika, kimia, biologi, bahasa Indonesia, PPKn",
+      "formats": [
+        "F1",
+        "F4",
+        "F6"
+      ],
+      "styles": [
+        "V22",
+        "V27",
+        "V18",
+        "V26",
+        "V5",
+        "V13",
+        "V29",
+        "V23"
+      ],
+      "voice": "narator-guru",
+      "music": "bright focused, light marimba"
+    },
+    "hukum-sehari-hari": {
+      "group": "Edukasi",
+      "desc": "hak konsumen, aturan lalu lintas, cara lapor, dokumen",
+      "formats": [
+        "F1",
+        "F5",
+        "F4"
+      ],
+      "styles": [
+        "V22",
+        "V27",
+        "V9",
+        "V10",
+        "V3",
+        "V21"
+      ],
+      "voice": "narator-berita",
+      "music": "neutral steady underscore",
+      "legal": true,
+      "time_sensitive": true
+    },
+    "lingkungan-iklim": {
+      "group": "Edukasi",
+      "desc": "sampah, iklim, energi, alam rusak & pulih",
+      "formats": [
+        "F7",
+        "F1",
+        "F11"
+      ],
+      "styles": [
+        "V13",
+        "V14",
+        "V27",
+        "V29",
+        "V24",
+        "V28"
+      ],
+      "voice": "narator-dokumenter",
+      "music": "hopeful cinematic, airy pads"
+    },
+    "sains-alam": {
+      "desc": "kenapa langit biru, cara kerja tubuh, alam",
+      "formats": [
+        "F1",
+        "F8",
+        "F7"
+      ],
+      "styles": [
+        "V24",
+        "V13",
+        "V14",
+        "V22",
+        "V29",
+        "V7",
+        "V28",
+        "V18",
+        "V5"
+      ],
+      "voice": "narator-ceria",
+      "music": "wonder, light orchestral, curious",
+      "group": "Edukasi"
+    },
+    "sejarah": {
+      "desc": "sejarah tokoh, tempat, teknologi",
+      "formats": [
+        "F10",
+        "F2",
+        "F8"
+      ],
+      "styles": [
+        "V25",
+        "V2",
+        "V4",
+        "V28",
+        "V3",
+        "V20",
+        "V24"
+      ],
+      "voice": "narator-dokumenter",
+      "music": "cinematic documentary, warm strings",
+      "group": "Edukasi"
+    },
+    "hubungan-sosial": {
+      "group": "Pengembangan diri",
+      "desc": "pertemanan, pasangan, komunikasi, etika bergaul",
+      "formats": [
+        "F9",
+        "F6",
+        "F5"
+      ],
+      "styles": [
+        "V23",
+        "V24",
+        "V5",
+        "V3",
+        "V20",
+        "V6"
+      ],
+      "voice": "cast-dialog",
+      "music": "warm acoustic, light and friendly"
+    },
+    "motivasi-tips": {
+      "desc": "tips cepat, opini, kebiasaan",
+      "formats": [
+        "F6",
+        "F5",
+        "F1"
+      ],
+      "styles": [
+        "V1",
+        "V9",
+        "V11",
+        "V16",
+        "V20",
+        "V21",
+        "V3"
+      ],
+      "voice": "narator-tech",
+      "music": "upbeat driving, modern",
+      "group": "Pengembangan diri"
+    },
+    "parenting": {
+      "group": "Pengembangan diri",
+      "desc": "tips orang tua, tumbuh kembang anak",
+      "formats": [
+        "F6",
+        "F1",
+        "F9"
+      ],
+      "styles": [
+        "V24",
+        "V23",
+        "V6",
+        "V22",
+        "V27",
+        "V5"
+      ],
+      "voice": "cast-parenting",
+      "music": "gentle playful acoustic, glockenspiel",
+      "health_claims": true
+    },
+    "pelajaran-hidup": {
+      "group": "Pengembangan diri",
+      "desc": "hikmah, renungan, perumpamaan, filsafat ringan (stoik), kisah bermakna",
+      "formats": [
+        "F12",
+        "F2",
+        "F6"
+      ],
+      "styles": [
+        "V24",
+        "V25",
+        "V5",
+        "V14",
+        "V12",
+        "V2",
+        "V29",
+        "V1",
+        "V9"
+      ],
+      "voice": "narator-renungan",
+      "music": "reflective solo piano, warm strings, slow"
+    },
+    "psikologi-perilaku": {
+      "group": "Pengembangan diri",
+      "desc": "bias pikiran, kebiasaan, emosi, kesehatan mental ringan",
+      "formats": [
+        "F1",
+        "F7",
+        "F5"
+      ],
+      "styles": [
+        "V23",
+        "V14",
+        "V12",
+        "V22",
+        "V13",
+        "V5",
+        "V9"
+      ],
+      "voice": "narator-tenang",
+      "music": "soft curious ambient, gentle pulse",
+      "mental_health": true
+    },
+    "bisnis-uang": {
+      "desc": "uang, bisnis, ekonomi",
+      "formats": [
+        "F3",
+        "F6",
+        "F1",
+        "F7"
+      ],
+      "styles": [
+        "V27",
+        "V9",
+        "V21",
+        "V8",
+        "V3",
+        "V18",
+        "V23"
+      ],
+      "voice": "narator-tech",
+      "music": "confident corporate-light, groove",
+      "group": "Uang & kerja"
+    },
+    "karier-kerja": {
+      "group": "Uang & kerja",
+      "desc": "CV, wawancara, kerja tim, freelance, produktivitas kerja",
+      "formats": [
+        "F6",
+        "F4",
+        "F3",
+        "F9"
+      ],
+      "styles": [
+        "V10",
+        "V27",
+        "V9",
+        "V23",
+        "V1",
+        "V21",
+        "V3"
+      ],
+      "voice": "narator-santai",
+      "music": "confident modern groove"
+    },
+    "keuangan-pribadi": {
+      "group": "Uang & kerja",
+      "desc": "anggaran, menabung, utang, investasi dasar",
+      "formats": [
+        "F6",
+        "F7",
+        "F1",
+        "F3"
+      ],
+      "styles": [
+        "V27",
+        "V21",
+        "V9",
+        "V23",
+        "V6",
+        "V3"
+      ],
+      "voice": "narator-tenang",
+      "music": "calm confident lo-fi",
+      "finance_disclaimer": true,
+      "time_sensitive": true
+    },
+    "kisah-anak": {
+      "desc": "dongeng, fabel, cerita anak non-religi",
+      "formats": [
+        "F2",
+        "F9"
+      ],
+      "styles": [
+        "V24",
+        "V23",
+        "V2",
+        "V6",
+        "V7",
+        "V5",
+        "V26"
+      ],
+      "voice": "cast-anak",
+      "music": "whimsical playful, glockenspiel, light",
+      "group": "Kisah",
+      "fiksi": true
+    },
+    "kisah-drama": {
+      "group": "Kisah",
+      "desc": "fiksi dewasa: perjuangan hidup, persahabatan, cinta, kantor, perantauan",
+      "formats": [
+        "F2",
+        "F9"
+      ],
+      "styles": [
+        "V24",
+        "V25",
+        "V5",
+        "V3",
+        "V2",
+        "V4",
+        "V12"
+      ],
+      "voice": "cast-drama",
+      "music": "emotional piano + strings, build",
+      "fiksi": true
+    },
+    "kisah-inspiratif": {
+      "group": "Kisah",
+      "desc": "kisah nyata tokoh/biografi singkat, perjuangan orang sukses",
+      "formats": [
+        "F10",
+        "F2"
+      ],
+      "styles": [
+        "V28",
+        "V2",
+        "V3",
+        "V4",
+        "V27",
+        "V21",
+        "V9"
+      ],
+      "voice": "cast-biografi",
+      "music": "inspiring cinematic build, piano to strings",
+      "real_persons": true
+    },
+    "kisah-keluarga": {
+      "desc": "kisah keluarga, kehidupan sehari-hari, moral, persahabatan",
+      "formats": [
+        "F2",
+        "F9"
+      ],
+      "styles": [
+        "V24",
+        "V25",
+        "V5",
+        "V2",
+        "V23",
+        "V6",
+        "V7"
+      ],
+      "voice": "cast-keluarga",
+      "music": "warm acoustic, gentle piano, hopeful",
+      "group": "Kisah",
+      "fiksi": true
+    },
+    "kisah-komedi": {
+      "group": "Kisah",
+      "desc": "sketsa lucu sehari-hari, salah paham, dialog",
+      "formats": [
+        "F13",
+        "F9",
+        "F2"
+      ],
+      "styles": [
+        "V20",
+        "V23",
+        "V12",
+        "V26",
+        "V6",
+        "V11"
+      ],
+      "voice": "cast-komedi",
+      "music": "quirky comedic, bassoon & pizzicato",
+      "fiksi": true
+    },
+    "kisah-seram": {
+      "group": "Kisah",
+      "desc": "cerita seram, urban legend, cerita rakyat mistis (tanpa gore)",
+      "formats": [
+        "F14",
+        "F2"
+      ],
+      "styles": [
+        "V25",
+        "V4",
+        "V15",
+        "V19",
+        "V12",
+        "V5"
+      ],
+      "voice": "cast-seram",
+      "music": "eerie drone, sparse piano, low hits",
+      "fiksi": true,
+      "horror_safe": true
+    },
+    "agama-ibadah": {
+      "desc": "tata cara ibadah, doa, makna ayat/hadis (bukan kisah)",
+      "formats": [
+        "F4",
+        "F1",
+        "F6"
+      ],
+      "styles": [
+        "V24",
+        "V22",
+        "V5",
+        "V27",
+        "V9",
+        "V2"
+      ],
+      "voice": "narator-dokumenter",
+      "music": "calm soft pads, no heavy instruments",
+      "adab": true,
+      "group": "Agama"
+    },
+    "kisah-islami": {
+      "desc": "kisah nabi, sahabat, hikmah Al-Quran (anak & umum)",
+      "formats": [
+        "F2",
+        "F8"
+      ],
+      "styles": [
+        "V24",
+        "V5",
+        "V2",
+        "V28",
+        "V6",
+        "V25"
+      ],
+      "voice": "cast-islami",
+      "music": "calm nasheed-style hum, no instruments heavy, soft pads",
+      "adab": true,
+      "group": "Agama"
+    },
+    "berita-hiburan": {
+      "desc": "berita artis, selebriti, musik, film, viral",
+      "formats": [
+        "F11",
+        "F10",
+        "F5"
+      ],
+      "styles": [
+        "V1",
+        "V21",
+        "V3",
+        "V27",
+        "V9",
+        "V16",
+        "V11",
+        "V4"
+      ],
+      "voice": "narator-berita",
+      "music": "bright pop news bed, light percussion",
+      "real_persons": true,
+      "time_sensitive": true,
+      "group": "Berita"
+    },
+    "berita-umum": {
+      "desc": "peristiwa terkini non-tech: kebijakan, bencana, ekonomi harian",
+      "formats": [
+        "F11",
+        "F7",
+        "F10"
+      ],
+      "styles": [
+        "V27",
+        "V28",
+        "V1",
+        "V9",
+        "V21",
+        "V3",
+        "V4"
+      ],
+      "voice": "narator-berita",
+      "music": "neutral news underscore, steady pulse",
+      "real_persons": true,
+      "time_sensitive": true,
+      "group": "Berita"
+    },
+    "olahraga": {
+      "desc": "pertandingan, atlet, aturan main, rekor",
+      "formats": [
+        "F11",
+        "F6",
+        "F3",
+        "F10"
+      ],
+      "styles": [
+        "V27",
+        "V21",
+        "V11",
+        "V1",
+        "V9",
+        "V18",
+        "V26"
+      ],
+      "voice": "narator-santai",
+      "music": "energetic sporty drums, stadium build",
+      "real_persons": true,
+      "time_sensitive": true,
+      "group": "Berita"
+    },
+    "dunia-hewan": {
+      "group": "Gaya hidup",
+      "desc": "fakta hewan, perilaku, merawat hewan peliharaan",
+      "formats": [
+        "F1",
+        "F8",
+        "F6"
+      ],
+      "styles": [
+        "V23",
+        "V24",
+        "V7",
+        "V6",
+        "V29",
+        "V2",
+        "V26"
+      ],
+      "voice": "narator-ceria",
+      "music": "playful light, pizzicato"
+    },
+    "fashion-kecantikan": {
+      "group": "Gaya hidup",
+      "desc": "padu padan, perawatan kulit, salah kaprah kecantikan",
+      "formats": [
+        "F6",
+        "F5",
+        "F4"
+      ],
+      "styles": [
+        "V8",
+        "V17",
+        "V16",
+        "V9",
+        "V3",
+        "V1"
+      ],
+      "voice": "narator-ceria",
+      "music": "chic modern pop beat",
+      "health_claims": true
+    },
+    "kesehatan-hidup": {
+      "desc": "kesehatan, gaya hidup, psikologi ringan",
+      "formats": [
+        "F1",
+        "F5",
+        "F6"
+      ],
+      "styles": [
+        "V23",
+        "V24",
+        "V6",
+        "V22",
+        "V27",
+        "V14"
+      ],
+      "voice": "narator-ceria",
+      "music": "light positive acoustic",
+      "group": "Gaya hidup",
+      "health_claims": true
+    },
+    "kuliner-resep": {
+      "desc": "resep, asal makanan, kenapa makanan X begitu",
+      "formats": [
+        "F4",
+        "F6",
+        "F1"
+      ],
+      "styles": [
+        "V6",
+        "V24",
+        "V2",
+        "V5",
+        "V7",
+        "V22",
+        "V3"
+      ],
+      "voice": "narator-ceria",
+      "music": "warm acoustic kitchen groove, ukulele",
+      "group": "Gaya hidup"
+    },
+    "otomotif": {
+      "group": "Gaya hidup",
+      "desc": "cara kerja mesin, perawatan motor/mobil, perbandingan",
+      "formats": [
+        "F1",
+        "F4",
+        "F3"
+      ],
+      "styles": [
+        "V18",
+        "V7",
+        "V27",
+        "V10",
+        "V26",
+        "V29"
+      ],
+      "voice": "narator-santai",
+      "music": "driving rock-lite, steady"
+    },
+    "pertanian-peternakan": {
+      "group": "Gaya hidup",
+      "desc": "bertani, beternak, kebun rumah, ikan",
+      "formats": [
+        "F4",
+        "F1",
+        "F6"
+      ],
+      "styles": [
+        "V24",
+        "V2",
+        "V18",
+        "V27",
+        "V29",
+        "V6"
+      ],
+      "voice": "narator-dokumenter",
+      "music": "pastoral acoustic guitar, warm"
+    },
+    "rumah-diy": {
+      "group": "Gaya hidup",
+      "desc": "tips rumah, bersih-bersih, perbaikan kecil, life hack",
+      "formats": [
+        "F4",
+        "F6"
+      ],
+      "styles": [
+        "V6",
+        "V2",
+        "V22",
+        "V7",
+        "V5",
+        "V18"
+      ],
+      "voice": "narator-ceria",
+      "music": "bouncy acoustic, claps",
+      "safety": true
+    },
+    "travel-budaya": {
+      "desc": "tempat, budaya daerah, tradisi, asal-usul nama",
+      "formats": [
+        "F10",
+        "F8",
+        "F6"
+      ],
+      "styles": [
+        "V28",
+        "V24",
+        "V2",
+        "V25",
+        "V3",
+        "V29"
+      ],
+      "voice": "narator-dokumenter",
+      "music": "cinematic travel, light ethnic percussion",
+      "group": "Gaya hidup"
+    },
+    "gaming": {
+      "group": "Hiburan",
+      "desc": "budaya game, tips, sejarah game (tanpa aset game berhak cipta)",
+      "formats": [
+        "F6",
+        "F5",
+        "F3",
+        "F11"
+      ],
+      "styles": [
+        "V26",
+        "V15",
+        "V16",
+        "V19",
+        "V11",
+        "V21"
+      ],
+      "voice": "narator-santai",
+      "music": "chiptune-inspired synth, energetic",
+      "copyright": true
+    },
+    "misteri-fakta-unik": {
+      "desc": "fakta aneh, misteri, 'kenapa bisa begitu'",
+      "formats": [
+        "F6",
+        "F7",
+        "F10"
+      ],
+      "styles": [
+        "V4",
+        "V15",
+        "V12",
+        "V25",
+        "V19",
+        "V13",
+        "V20"
+      ],
+      "voice": "narator-dokumenter",
+      "music": "mysterious low drone, sparse plucks",
+      "group": "Hiburan"
+    },
+    "ulasan-film-buku": {
+      "desc": "ulasan/ringkasan film, buku, game (tanpa cuplikan berhak cipta)",
+      "formats": [
+        "F5",
+        "F6",
+        "F3"
+      ],
+      "styles": [
+        "V3",
+        "V20",
+        "V1",
+        "V4",
+        "V9",
+        "V11"
+      ],
+      "voice": "narator-santai",
+      "music": "cinematic trailer-lite, moody build",
+      "group": "Hiburan"
+    },
+    "umum": {
+      "desc": "CADANGAN: topik yang tidak cocok kategori mana pun",
+      "formats": [
+        "F1",
+        "F6",
+        "F7",
+        "F5"
+      ],
+      "styles": [
+        "V23",
+        "V22",
+        "V3",
+        "V27",
+        "V9",
+        "V1",
+        "V24",
+        "V2",
+        "V5",
+        "V13"
+      ],
+      "voice": "narator-tech",
+      "music": "light curious modern, warm",
+      "group": "Cadangan"
+    }
+  },
+  "palettes": {
+    "P1": {
+      "name": "Terminal-editorial",
+      "colors": {
+        "ink": "#0E100E",
+        "paper": "#EEE9DD",
+        "orange": "#FF7A1A",
+        "green": "#3DBE6B",
+        "red": "#E5484D"
+      }
+    },
+    "P2": {
+      "name": "Hazard bulletin",
+      "colors": {
+        "ink": "#0B0B0A",
+        "bone": "#F1EFE8",
+        "yellow": "#F5C400",
+        "red": "#E5484D",
+        "mint": "#7CE0B5"
+      }
+    },
+    "P3": {
+      "name": "Cobalt blueprint",
+      "colors": {
+        "blue": "#0D2B52",
+        "line": "#CFE3FF",
+        "amber": "#FFB703",
+        "red": "#FF5D5D"
+      }
+    },
+    "P4": {
+      "name": "Riso print",
+      "colors": {
+        "paper": "#F4EBDD",
+        "ink": "#1E1B18",
+        "riso-red": "#E8452C",
+        "riso-blue": "#2B50AA"
+      }
+    },
+    "P5": {
+      "name": "Satu sinyal",
+      "colors": {
+        "black": "#0A0A0A",
+        "white": "#F7F7F5",
+        "acid": "#C6FF3D"
+      }
+    },
+    "P6": {
+      "name": "Newsprint halftone",
+      "colors": {
+        "cream": "#F2EFE6",
+        "black": "#111111",
+        "vermilion": "#D9381E",
+        "grey": "#9A978F"
+      }
+    },
+    "P7": {
+      "name": "Forest + brass",
+      "colors": {
+        "forest": "#0F2A22",
+        "brass": "#C8A24A",
+        "cream": "#EFE8D6",
+        "brick": "#B5452E"
+      }
+    },
+    "P8": {
+      "name": "Concrete + signal",
+      "colors": {
+        "concrete": "#B9B6AE",
+        "black": "#141414",
+        "signal": "#FF5A1F",
+        "white": "#F5F5F2"
+      }
+    },
+    "P9": {
+      "name": "Tenun senja",
+      "colors": {
+        "indigo": "#1E2A52",
+        "cream": "#F2E6C9",
+        "mustard": "#E3A72F",
+        "terracotta": "#C8553D",
+        "green": "#3F7D58"
+      }
+    },
+    "P10": {
+      "name": "Kebun ceria",
+      "colors": {
+        "cream": "#FFF4DD",
+        "forest": "#245642",
+        "sunny": "#F4C95D",
+        "coral": "#E77C62",
+        "ink": "#27352D"
+      }
+    },
+    "P11": {
+      "name": "Papan tulis",
+      "colors": {
+        "board": "#FAFAF7",
+        "ink": "#1B1F24",
+        "blue": "#2457C5",
+        "red": "#D7352B",
+        "green": "#2E8B57"
+      }
+    },
+    "P12": {
+      "name": "Papan kapur",
+      "colors": {
+        "board": "#203B2E",
+        "chalk": "#F1EFE6",
+        "yellow": "#F6D86B",
+        "pink": "#F29BB2",
+        "sky": "#9FD3F0"
+      }
+    },
+    "P13": {
+      "name": "Kelir wayang",
+      "colors": {
+        "black": "#121010",
+        "kelir": "#F2A541",
+        "glow": "#FBD38D",
+        "brown": "#6B3E26",
+        "red": "#B23A2B"
+      }
+    },
+    "P14": {
+      "name": "Buku cerita",
+      "colors": {
+        "paper": "#FBF3E4",
+        "sky": "#8EC5E8",
+        "leaf": "#7DB46C",
+        "dusk": "#F2A65A",
+        "ink": "#4A3B32"
+      }
+    },
+    "P15": {
+      "name": "Pixel malam",
+      "colors": {
+        "night": "#1B2244",
+        "plum": "#7A2B5E",
+        "green": "#1F8A5B",
+        "gold": "#FFE14A",
+        "white": "#FFF3E6"
+      }
+    },
+    "P16": {
+      "name": "Data jernih",
+      "colors": {
+        "white": "#F7F7F4",
+        "ink": "#16181D",
+        "blue": "#2F6BFF",
+        "orange": "#FF7A1A",
+        "grey": "#8A8F98"
+      }
+    },
+    "P17": {
+      "name": "Kartografi",
+      "colors": {
+        "map": "#EFE6D2",
+        "sea": "#9CC3C9",
+        "land": "#D8C9A3",
+        "route": "#C23B22",
+        "ink": "#2B2A28"
+      }
+    },
+    "P18": {
+      "name": "Malam neon",
+      "colors": {
+        "night": "#0B0D17",
+        "pink": "#FF3EA5",
+        "cyan": "#38E8FF",
+        "yellow": "#FFE14D",
+        "white": "#F5F5F2"
+      }
+    },
+    "P19": {
+      "name": "Fajar faset",
+      "colors": {
+        "deep": "#1E1B3A",
+        "violet": "#4B3F72",
+        "coral": "#E86A5A",
+        "peach": "#F6B66E",
+        "cream": "#F7EFE6"
+      }
+    }
+  },
+  "typography": {
+    "T1": {
+      "display": "Bricolage Grotesque",
+      "accent": "Instrument Serif italic",
+      "mono": "JetBrains Mono"
+    },
+    "T2": {
+      "display": "Archivo (expanded)",
+      "accent": "Newsreader italic",
+      "mono": "IBM Plex Mono"
+    },
+    "T3": {
+      "display": "Schibsted Grotesk",
+      "accent": "Fraunces italic",
+      "mono": "DM Mono"
+    },
+    "T4": {
+      "display": "Familjen Grotesk",
+      "accent": "Instrument Serif italic",
+      "mono": "Martian Mono"
+    },
+    "T5": {
+      "display": "Unbounded",
+      "accent": "Newsreader italic",
+      "mono": "Geist Mono"
+    },
+    "T6": {
+      "display": "Alfa Slab One",
+      "accent": "Nunito",
+      "mono": "—"
+    },
+    "T7": {
+      "display": "Baloo 2",
+      "accent": "Nunito Sans",
+      "mono": "IBM Plex Mono"
+    },
+    "T8": {
+      "display": "Caveat",
+      "accent": "Nunito",
+      "mono": "JetBrains Mono"
+    },
+    "T9": {
+      "display": "Press Start 2P",
+      "accent": "VT323",
+      "mono": "VT323"
+    },
+    "T10": {
+      "display": "Fraunces (SOFT/WONK)",
+      "accent": "Nunito",
+      "mono": "DM Mono"
+    },
+    "T11": {
+      "display": "Cormorant Garamond (bold, >= 72px)",
+      "accent": "Nunito Sans",
+      "mono": "IBM Plex Mono"
+    },
+    "T12": {
+      "display": "Fredoka",
+      "accent": "Nunito",
+      "mono": "Geist Mono"
+    },
+    "T13": {
+      "display": "Instrument Sans",
+      "accent": "Instrument Serif italic",
+      "mono": "JetBrains Mono"
+    }
+  },
+  "voices": {
+    "Galang": {
+      "id": "04b567df-2923-4b0c-896b-4b7df0a07e1a",
+      "gender": "m",
+      "tone": "tenang, jelas"
+    },
+    "Andi": {
+      "id": "a053f6bc-7df4-40de-96d4-de026bc47ce8",
+      "gender": "m",
+      "tone": "ekspresif, ceria"
+    },
+    "Intan": {
+      "id": "f3b7c445-d015-40f7-a665-9595e0bc0c90",
+      "gender": "f",
+      "tone": "tenang, meyakinkan"
+    },
+    "Anisa": {
+      "id": "8f703c45-8cb6-4e0c-8015-5e8a9e260a8a",
+      "gender": "f",
+      "tone": "tenang, jernih"
+    },
+    "Safira": {
+      "id": "9076f14a-5602-48a7-bfd1-67ef9b40dd6d",
+      "gender": "f",
+      "tone": "profesional, ramah"
+    },
+    "Ratna": {
+      "id": "e78f5fbd-2445-42a2-bddc-2dee624330eb",
+      "gender": "f",
+      "tone": "hangat, empatik"
+    },
+    "Risa": {
+      "id": "6a3fe952-63f8-4c99-865a-44887175ea26",
+      "gender": "f",
+      "tone": "lembut"
+    },
+    "Citra": {
+      "id": "74546efd-3ac5-4c41-ba59-4756227f429a",
+      "gender": "f",
+      "tone": "ramah"
+    },
+    "Siti": {
+      "id": "b441c4fd-4910-4c55-ae56-f0291057e2cc",
+      "gender": "f",
+      "tone": "ceria, bercerita"
+    }
+  },
+  "casts": {
+    "narator-tech": {
+      "narator": {
+        "voice": "Galang",
+        "speed": 1.05
+      }
+    },
+    "narator-ceria": {
+      "narator": {
+        "voice": "Siti",
+        "speed": 1.0
+      }
+    },
+    "narator-dokumenter": {
+      "narator": {
+        "voice": "Galang",
+        "speed": 0.98
+      }
+    },
+    "cast-keluarga": {
+      "narator": {
+        "voice": "Safira",
+        "speed": 1.0
+      },
+      "ayah": {
+        "voice": "Galang",
+        "speed": 1.0
+      },
+      "ibu": {
+        "voice": "Ratna",
+        "speed": 1.0
+      },
+      "anak-laki": {
+        "voice": "Andi",
+        "speed": 1.06,
+        "pitch": 3
+      },
+      "anak-perempuan": {
+        "voice": "Citra",
+        "speed": 1.06,
+        "pitch": 2
+      },
+      "kakek": {
+        "voice": "Galang",
+        "speed": 0.9,
+        "pitch": -2
+      },
+      "nenek": {
+        "voice": "Risa",
+        "speed": 0.92,
+        "pitch": -1
+      },
+      "teman": {
+        "voice": "Andi",
+        "speed": 1.04
+      }
+    },
+    "cast-islami": {
+      "narator": {
+        "voice": "Galang",
+        "speed": 0.98
+      },
+      "tokoh-1": {
+        "voice": "Citra",
+        "speed": 1.06,
+        "pitch": 3
+      },
+      "tokoh-2": {
+        "voice": "Andi",
+        "speed": 1.04,
+        "pitch": 2
+      },
+      "tokoh-3": {
+        "voice": "Ratna",
+        "speed": 1.0
+      }
+    },
+    "cast-anak": {
+      "narator": {
+        "voice": "Siti",
+        "speed": 1.0
+      },
+      "tokoh-1": {
+        "voice": "Citra",
+        "speed": 1.08,
+        "pitch": 3
+      },
+      "tokoh-2": {
+        "voice": "Andi",
+        "speed": 1.04,
+        "pitch": 2
+      },
+      "tokoh-3": {
+        "voice": "Galang",
+        "speed": 0.95,
+        "pitch": -2
+      }
+    },
+    "narator-berita": {
+      "narator": {
+        "voice": "Intan",
+        "speed": 1.05
+      }
+    },
+    "narator-santai": {
+      "narator": {
+        "voice": "Andi",
+        "speed": 1.04
+      }
+    },
+    "narator-renungan": {
+      "narator": {
+        "voice": "Ratna",
+        "speed": 0.96
+      },
+      "tokoh-1": {
+        "voice": "Galang",
+        "speed": 1.0
+      },
+      "tokoh-2": {
+        "voice": "Citra",
+        "speed": 1.04,
+        "pitch": 2
+      }
+    },
+    "narator-tenang": {
+      "narator": {
+        "voice": "Anisa",
+        "speed": 1.0
+      }
+    },
+    "narator-guru": {
+      "narator": {
+        "voice": "Anisa",
+        "speed": 1.0
+      }
+    },
+    "cast-dialog": {
+      "narator": {
+        "voice": "Safira",
+        "speed": 1.0
+      },
+      "tokoh-1": {
+        "voice": "Andi",
+        "speed": 1.04
+      },
+      "tokoh-2": {
+        "voice": "Citra",
+        "speed": 1.02
+      }
+    },
+    "cast-parenting": {
+      "narator": {
+        "voice": "Ratna",
+        "speed": 1.0
+      },
+      "orang-tua": {
+        "voice": "Galang",
+        "speed": 1.0
+      },
+      "anak": {
+        "voice": "Citra",
+        "speed": 1.06,
+        "pitch": 3
+      }
+    },
+    "cast-bahasa": {
+      "narator": {
+        "voice": "Safira",
+        "speed": 1.0
+      },
+      "contoh-inggris": {
+        "voice": "Siti",
+        "speed": 0.95,
+        "language": "en"
+      }
+    },
+    "cast-drama": {
+      "narator": {
+        "voice": "Intan",
+        "speed": 0.98
+      },
+      "tokoh-pria": {
+        "voice": "Galang",
+        "speed": 1.0
+      },
+      "tokoh-wanita": {
+        "voice": "Ratna",
+        "speed": 1.0
+      },
+      "tokoh-muda": {
+        "voice": "Andi",
+        "speed": 1.04
+      },
+      "tokoh-muda-wanita": {
+        "voice": "Citra",
+        "speed": 1.04
+      }
+    },
+    "cast-komedi": {
+      "narator": {
+        "voice": "Siti",
+        "speed": 1.04
+      },
+      "tokoh-1": {
+        "voice": "Andi",
+        "speed": 1.08
+      },
+      "tokoh-2": {
+        "voice": "Galang",
+        "speed": 1.0
+      },
+      "tokoh-3": {
+        "voice": "Citra",
+        "speed": 1.06,
+        "pitch": 2
+      }
+    },
+    "cast-seram": {
+      "narator": {
+        "voice": "Galang",
+        "speed": 0.92
+      },
+      "tokoh-1": {
+        "voice": "Citra",
+        "speed": 1.04
+      },
+      "tokoh-2": {
+        "voice": "Andi",
+        "speed": 1.0
+      },
+      "suara-misterius": {
+        "voice": "Risa",
+        "speed": 0.86,
+        "pitch": -2
+      }
+    },
+    "cast-biografi": {
+      "narator": {
+        "voice": "Galang",
+        "speed": 0.98
+      },
+      "pembaca-kutipan": {
+        "voice": "Safira",
+        "speed": 0.96
+      }
+    }
+  }
+}
