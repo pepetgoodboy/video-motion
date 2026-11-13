@@ -33,6 +33,11 @@ Semua file adalah subset latin dari Google Fonts, berlisensi **SIL Open Font Lic
 | `ibm-plex-mono-400-latin.woff2`, `ibm-plex-mono-500-latin.woff2` | IBM Plex Mono |
 | `jetbrains-mono-latin.woff2` | JetBrains Mono |
 | `martian-mono-latin.woff2` | Martian Mono |
+| `caveat-var-latin.woff2` | Caveat (variable) |
+| `fredoka-var-latin.woff2` | Fredoka (variable) |
+| `nunito-var-latin.woff2` | Nunito (variable) |
+| `geist-mono-latin.woff2` | Geist Mono |
+| `unbounded-latin.woff2` | Unbounded |
 
 OFL mengizinkan penggunaan dan redistribusi font, termasuk di dalam video komersial.
 Kalau kamu mendistribusikan ulang file font-nya, sertakan teks lisensi OFL dari masing-masing
@@ -43,7 +48,7 @@ keluarga font.
 
 ## SFX — `shared/sfx/`
 
-14 file efek suara. **Sumber lisensi tiap file belum terdokumentasi di repo ini.**
+17 file efek suara. Tiga file (`chalk-long`, `chalk-short`, `shutter-noise`) dibuat di repo ini dari noise sintetis ffmpeg (lisensi mengikuti repo, MIT). **Sumber lisensi 14 file lainnya belum terdokumentasi di repo ini.**
 `audio_meta.json` pada tiap video bisa berisi field `license` dan `credit`; kalau kosong, asal
 file tidak tercatat.
 
@@ -56,6 +61,8 @@ Sebelum mempublikasikan repo ini lebih jauh, lakukan salah satu:
 | File | Sumber | Lisensi | Credit |
 |---|---|---|---|
 | `bass-rumble.mp3` | _belum dicatat_ | _?_ | _?_ |
+| `chalk-long.mp3`, `chalk-short.mp3` | sintesis ffmpeg (`anoisesrc` pink + bandpass 3,6 kHz + tremolo), 11 Nov 2026 | MIT (repo ini) | — |
+| `shutter-noise.mp3` | sintesis ffmpeg (`anoisesrc` white + highpass), 11 Nov 2026 | MIT (repo ini) | — |
 | `chime-soft.mp3` | _belum dicatat_ | _?_ | _?_ |
 | `error-thud.mp3` | _belum dicatat_ | _?_ | _?_ |
 | `gas-hiss.mp3` | _belum dicatat_ | _?_ | _?_ |

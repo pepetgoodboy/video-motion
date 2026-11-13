@@ -26,4 +26,6 @@ footage/
 # Sementara
 qc/
 qc-neon-*.png
+qc-*.jpg
+__pycache__/
 *.raw
