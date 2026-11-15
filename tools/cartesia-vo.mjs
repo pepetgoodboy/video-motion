@@ -16,12 +16,13 @@
 //   voice boleh nama (lihat tools/direction-map.json → voices) atau UUID.
 //   pitch = semitone, diterapkan lokal lewat ffmpeg rubberband (bukan fitur Cartesia).
 //   language = kode bahasa baris itu (default id); mis. "en" untuk contoh pelafalan Inggris
-//   dengan suara bilingual (Siti/Andi: id-ID + en-US).
+//   dengan suara bilingual (Siti: id-ID + en-US). Andi dihapus dari katalog Cartesia (14 Nov 2026).
 //
 // Cache: file dilewati bila teks+suara+speed+pitch sama dengan manifest sebelumnya
 // (hemat kuota). Ubah salah satunya → baris itu saja yang digenerate ulang. --force = semua.
 //
 // API key dibaca dari env CARTESIA_API_KEY (jalankan dengan node --env-file=../../.env).
+// Punya beberapa key (kuota habis)? --key-env CARTESIA_API_KEY_3 → pakai variabel itu (nilainya tidak dicetak).
 import { writeFileSync, mkdirSync, existsSync, readFileSync, renameSync, unlinkSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -30,7 +31,8 @@ import { execFileSync } from "node:child_process";
 
 const API = "https://api.cartesia.ai";
 const VERSION = "2026-08-14";
-const KEY = process.env.CARTESIA_API_KEY;
+const KEY_ENV = (() => { const i = process.argv.indexOf("--key-env"); return i === -1 ? "CARTESIA_API_KEY" : process.argv[i + 1]; })();
+const KEY = process.env[KEY_ENV];
 const MAP = JSON.parse(readFileSync(join(dirname(fileURLToPath(import.meta.url)), "direction-map.json"), "utf8"));
 
 const argv = process.argv.slice(2);
@@ -42,7 +44,7 @@ const has = (name) => argv.includes(`--${name}`);
 const DRY = has("dry-run");
 
 if (!KEY && !DRY) {
-  console.error("CARTESIA_API_KEY belum di-set. Jalankan dengan: node --env-file=../../.env tools/cartesia-vo.mjs ...");
+  console.error(`${KEY_ENV} belum di-set.`, " Jalankan dengan: node --env-file=../../.env tools/cartesia-vo.mjs ...");
   process.exit(1);
 }
 

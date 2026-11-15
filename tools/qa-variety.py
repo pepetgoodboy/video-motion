@@ -168,6 +168,8 @@ def other_videos(exclude):
         slug = os.path.basename(d.rstrip("/"))
         if slug.startswith("_") or "presenter-test" in slug:
             continue
+        if os.path.exists(os.path.join(d, "SUPERSEDED")):  # versi lama episode yang sama, tidak tayang
+            continue
         cands = [f for f in glob.glob(os.path.join(d, "renders", "*.mp4"))
                  if not re.search(r"raw120|draft|test|pregain", os.path.basename(f))]
         if not cands:

@@ -8,6 +8,7 @@
 //   node tools/qa-video.mjs videos/<slug>/renders/final.mp4
 //   node tools/qa-video.mjs <file> --scenes 0:10,10:22,22:31,...   # override scene map
 //   node tools/qa-video.mjs <file> --freeze 0.02 --frame 0.02       # tuning threshold
+//   node tools/qa-video.mjs <file> --fps 30                          # seri 3D (three.js, CPU) dirender 30 fps
 //
 // Exit code 1 kalau ada FAIL, supaya bisa dipakai di gate CI/lokal.
 
@@ -28,6 +29,8 @@ const opt = (name, dflt) => {
 const FREEZE = Number(opt("freeze", 0.02));
 // Ambang frame hitam: mean luma 0-255.
 const BLACK = Number(opt("black", 8));
+// fps wajib: 60 (pipeline 120→60 blend); seri 3D boleh 30 lewat --fps 30.
+const FPS = String(opt("fps", 60));
 
 const run = (bin, argv, binOpts = {}) =>
   execFileSync(bin, argv, { maxBuffer: 1024 * 1024 * 1024, ...binOpts });
@@ -56,7 +59,7 @@ line(`  frames ${v.nb_frames}  duration ${dur.toFixed(3)}s  ${(bitrate / 1e6).to
 line(`  audio ${a ? `${a.codec_name} ${a.r_frame_rate}` : "NONE"}`);
 
 if (v.width !== 1080 || v.height !== 1920) fail.push(`resolusi ${v.width}x${v.height}, harus 1080x1920`);
-if (v.r_frame_rate !== "60/1") fail.push(`r_frame_rate ${v.r_frame_rate}, harus 60/1`);
+if (v.r_frame_rate !== `${FPS}/1`) fail.push(`r_frame_rate ${v.r_frame_rate}, harus ${FPS}/1`);
 if (v.pix_fmt !== "yuv420p") fail.push(`pix_fmt ${v.pix_fmt}, harus yuv420p (kompatibilitas player)`);
 if (!a) fail.push("tidak ada audio stream");
 
@@ -115,6 +118,7 @@ if (dark.length) {
 // Kelompokkan frame berurutan yang selisihnya < FREEZE. Satu-dua frame beku itu
 // normal (tahan beat); yang jadi masalah adalah run panjang, terutama saat VO
 // sedang bicara.
+const FR = n / dur; // fps asli (dulu dikunci 60 → di video 30 fps waktu terbaca separuh & ambang efektif 1 s)
 const frozen = new Uint8Array(diffs.length);
 for (let i = 0; i < diffs.length; i++) frozen[i] = diffs[i] < FREEZE ? 1 : 0;
 const runs = [];
@@ -122,20 +126,20 @@ for (let i = 0; i < frozen.length; i++) {
   if (!frozen[i]) continue;
   let j = i;
   while (j + 1 < frozen.length && frozen[j + 1]) j++;
-  runs.push({ from: i / 60, to: (j + 2) / 60, len: j - i + 2 });
+  runs.push({ from: i / FR, to: (j + 2) / FR, len: j - i + 2 });
   i = j;
 }
 runs.sort((x, y) => y.len - x.len);
 
 line("\n== FRAME BEKU ==");
 line(`  ambang selisih < ${FREEZE}; ${frozen.reduce((s, x) => s + x, 0)}/${frozen.length} frame (${((100 * frozen.reduce((s, x) => s + x, 0)) / frozen.length).toFixed(1)}%)`);
-const longRuns = runs.filter((r) => r.len >= 30); // >= 0.5s
+const longRuns = runs.filter((r) => r.len >= Math.round(FR * 0.5)); // >= 0.5s
 if (longRuns.length) {
   line("  run >= 0.5s:");
   for (const r of longRuns.slice(0, 10)) {
-    line(`    ${r.from.toFixed(2)}s .. ${r.to.toFixed(2)}s   ${(r.len / 60).toFixed(2)}s`);
+    line(`    ${r.from.toFixed(2)}s .. ${r.to.toFixed(2)}s   ${(r.len / FR).toFixed(2)}s`);
   }
-  fail.push(`${longRuns.length} blok beku >= 0.5s (terpanjang ${(longRuns[0].len / 60).toFixed(2)}s @ ${longRuns[0].from.toFixed(1)}s)`);
+  fail.push(`${longRuns.length} blok beku >= 0.5s (terpanjang ${(longRuns[0].len / FR).toFixed(2)}s @ ${longRuns[0].from.toFixed(1)}s)`);
 } else {
   line("  PASS tidak ada blok beku >= 0.5s");
 }

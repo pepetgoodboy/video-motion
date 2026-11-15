@@ -13,6 +13,9 @@
 //   node tools/pick-direction.mjs --category tech-konsep --slug apa-itu-docker \
 //        --topic "apa itu docker?" [--force-v V23] [--force-format F8] [--write]
 //   node tools/pick-direction.mjs --record videos/<slug>      # tambah baris ledger
+//   node tools/pick-direction.mjs --series series/<nama> --episode 1 --slug <nama>-eps1 --topic "..." --write
+//        mode serial: gaya/palet/font/suara/musik DIKUNCI dari series/<nama>/series.json; hanya layout K
+//        yang berotasi per episode (rotasi anti-monoton berlaku antar-serial, bukan antar-episode).
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -254,6 +257,52 @@ function pick() {
   }
 }
 
+
+// ---------- serial ----------
+function seriesPick() {
+  const sdir = arg("series"), ep = Number(arg("episode", "1")), slug = arg("slug");
+  if (!slug) { console.error("butuh --slug <nama>-eps<n>"); process.exit(2); }
+  const S = JSON.parse(readFileSync(join(ROOT, sdir, "series.json"), "utf8"));
+  const cat = MAP.categories[S.category];
+  const F = MAP.formats.F2, St = MAP.styles[S.lock.style.main];
+  const voiceId = (v) => (MAP.voices[v]?.id ?? (/^[0-9a-f-]{36}$/.test(v) ? v : null));
+  const cast = Object.fromEntries(Object.entries(S.cast).map(([r, c]) => {
+    const id = voiceId(c.voice); if (!id) throw new Error(`suara '${c.voice}' (${r}) tidak dikenal di direction-map.json`);
+    return [r, { voice: c.voice, speed: c.speed, ...(c.pitch ? { pitch: c.pitch } : {}), ...(c.fx ? { fx: c.fx } : {}), id }]; }));
+  const { rows } = readLedger();
+  const prev = rows.filter((r) => r.slug?.startsWith(`${S.slug}-eps`)).at(-1);
+  const pool = [...new Set([...(St.layouts || []), ...(F.layouts || []), "K4", "K6"])];
+  const rot = (ep - 1) % pool.length;
+  let layouts = [...pool.slice(rot), ...pool.slice(0, rot)];
+  if (prev?.k && layouts[0] === prev.k) layouts = [...layouts.slice(1), layouts[0]];
+  const T = MAP.typography[S.lock.typography.code];
+  const out = {
+    slug, topic: arg("topic", ""), category: S.category, created: new Date().toISOString(),
+    series: { slug: S.slug, title: S.title, episode: ep, dir: sdir },
+    duration_target: S.duration_target,
+    format: { code: "F2", name: `${F.name} (serial)`, beats: S.episode_beats },
+    style: { main: S.lock.style.main, name: St.name, family: St.family, card: `.claude/skills/video-reels/styles/${St.card}`,
+             accent: S.lock.style.accent ?? null, accent_name: null, cost: St.cost, min_occ: St.min_occ ?? null },
+    palette: { code: S.lock.palette.code, name: S.lock.palette.name, colors: S.lock.palette.colors },
+    typography: { code: S.lock.typography.code, ...T },
+    layouts, voice: { preset: `serial:${S.slug}`, multi_voice: true, cast },
+    music: S.lock.music,
+    flags: Object.fromEntries(Object.entries(cat).filter(([, v]) => v === true)),
+    seed: hash(slug) % 100000,
+    rotation: { note: "arahan dikunci serial; rotasi V/palet/tipografi tidak berlaku", previous_episode: prev?.slug ?? null },
+    alternatives: [], notes: [],
+  };
+  console.log(`serial '${S.title}' eps ${ep} → ${slug}`);
+  console.log(`  visual   ${out.style.main} ${out.style.name} · palet ${out.palette.code} ${out.palette.name} · tipo ${out.typography.code}`);
+  console.log(`  layout   ${layouts.join(" · ")}`);
+  console.log(`  suara    ${Object.entries(cast).map(([r, c]) => `${r}=${c.voice}${c.pitch ? `(${c.pitch > 0 ? "+" : ""}${c.pitch}st)` : ""}${c.fx ? `[${c.fx}]` : ""}`).join(", ")}`);
+  if (has("write")) {
+    const dir = join(ROOT, "videos", slug); mkdirSync(dir, { recursive: true });
+    writeFileSync(join(dir, "direction.json"), JSON.stringify(out, null, 2) + "\n");
+    console.log(`→ videos/${slug}/direction.json`);
+  }
+}
+
 // ---------- record ----------
 function record() {
   const dir = arg("record");
@@ -304,4 +353,5 @@ function record() {
 if (has("status")) status();
 else if (has("table")) table();
 else if (has("record")) record();
+else if (has("series")) seriesPick();
 else pick();

@@ -7,6 +7,7 @@
 //     25 baris tanpa dipotong = ±9 s hening yang tidak direncanakan.
 //   - output Cartesia pelan (±−26,7 LUFS) → butuh ±+10,5 dB supaya VO ±−16 LUFS.
 //
+// Efek per tokoh: cast[speaker].fx di vo-script.json ("batin" = monolog batin: gema tipis + lowpass).
 // Pakai (dari folder video):
 //   node ../../tools/vo-timing.mjs [--gain 10.5] [--lead 0.3] [--gap 0.2] [--tail 0.5] [--last-tail 1.4]
 // Input : assets/vo/manifest.json (dari cartesia-vo.mjs; field `scene` mengelompokkan baris)
@@ -21,6 +22,10 @@ const GAIN = num("gain", 10.5), LEAD = num("lead", 0.3), GAP = num("gap", 0.2), 
 const SR = 16000, THR = 32768 * Math.pow(10, -42 / 20);
 
 const man = JSON.parse(readFileSync("assets/vo/manifest.json", "utf8"));
+// efek per tokoh (cast[speaker].fx di vo-script.json), mis. "batin" = monolog dalam kepala
+const FX = { batin: "aecho=0.8:0.55:35|60:0.22|0.12,lowpass=f=6000,volume=-0.5dB" };
+let castFx = {};
+try { const vs = JSON.parse(readFileSync("vo-script.json", "utf8")); castFx = Object.fromEntries(Object.entries(vs.cast ?? {}).filter(([, c]) => c.fx).map(([r, c]) => [r, FX[c.fx] ?? ""])); } catch {}
 mkdirSync("assets/vo/t", { recursive: true });
 const lines = man.map((m) => {
   const pcm = execFileSync("ffmpeg", ["-v", "error", "-i", m.file, "-ac", "1", "-ar", String(SR), "-f", "s16le", "-"], { maxBuffer: 1 << 26 });
@@ -30,7 +35,7 @@ const lines = man.map((m) => {
   const from = Math.max(0, a / SR - 0.04), to = Math.min(s.length / SR, b / SR + 0.08);
   const out = `assets/vo/t/${m.id}.mp3`;
   execFileSync("ffmpeg", ["-v", "error", "-y", "-i", m.file, "-af",
-    `atrim=${from.toFixed(3)}:${to.toFixed(3)},asetpts=N/SR/TB,afade=t=in:d=0.02,areverse,afade=t=in:d=0.04,areverse,volume=${GAIN}dB,alimiter=limit=0.89:attack=4:release=60:level=disabled`,
+    `atrim=${from.toFixed(3)}:${to.toFixed(3)},asetpts=N/SR/TB,afade=t=in:d=0.02,areverse,afade=t=in:d=0.04,areverse,volume=${GAIN}dB,${castFx[m.speaker] ? castFx[m.speaker] + "," : ""}alimiter=limit=0.89:attack=4:release=60:level=disabled`,
     "-c:a", "libmp3lame", "-b:a", "160k", out]);
   return { id: m.id, scene: m.scene, speaker: m.speaker, file: out, dur: +(to - from).toFixed(3) };
 });
