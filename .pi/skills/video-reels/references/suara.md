@@ -13,15 +13,26 @@ Data suara + preset cast: `tools/direction-map.json → voices / casts`. Generat
 | Semua yang lain | satu narator (preset kategori) |
 
 Preset per kategori: `node tools/pick-direction.mjs --table` (kolom Suara). Narator sengaja
-disebar ke 6 suara (Galang tech/dokumenter, Intan berita, Andi santai, Siti ceria, Ratna
+disebar ke beberapa suara (Galang tech/dokumenter/santai, Intan berita, Siti ceria, Ratna
 renungan/parenting, Anisa guru/tenang) supaya kanal tidak terdengar satu suara terus.
 
-## 9 suara Indonesia yang tersedia (Cartesia, `language=id`, dicek 10 Nov 2026)
+## Kuota habis (`402 quota_exceeded`)
+
+`.env` bisa berisi beberapa key (`CARTESIA_API_KEY`, `_2`, `_3`). Kalau satu habis, pakai key lain tanpa mencetak
+nilainya: `node --env-file=../../.env ../../tools/cartesia-vo.mjs --script vo-script.json --out assets/vo --key-env CARTESIA_API_KEY_3`.
+Baris yang sudah jadi otomatis dilewati ("sama dengan sebelumnya, skip"). Jangan menambah kredit/overage tanpa izin user.
+
+## 8 suara Indonesia yang tersedia (Cartesia, `language=id`, dicek ulang 14 Nov 2026)
+
+**Andi dihapus dari katalog Cartesia** (`voice_not_found`, tidak ada di 913 voice per 14 Nov 2026).
+Suara pria Indonesia tinggal **Galang** → tokoh pria muda/anak = Galang +2/+3 st, pria tua = Galang −2 st,
+dan dua tokoh pria berbasis Galang **jangan satu adegan**. Kandidat pria lain: voice Melayu `Farhan`
+(`2c6adcf6-1ff1-42c6-8162-26861f65853a`) dan `Faiz` (`8281db18-6ac5-47bb-91a8-ce23a1f1d951`) dengan
+`"language": "id"` — aksen belum dinilai telinga manusia.
 
 | Nama | Gender | Karakter | Cocok untuk |
 |---|---|---|---|
 | Galang | m | tenang, jelas | narator tech/dokumenter, ayah |
-| Andi | m | ekspresif, ceria | narator olahraga/ulasan (`narator-santai`), anak laki-laki (+pitch), teman, tokoh hewan |
 | Safira | f | profesional, ramah | narator kisah keluarga |
 | Siti | f | ceria, bercerita | narator anak/sains |
 | Ratna | f | hangat, empatik | ibu |
@@ -46,14 +57,14 @@ kalau tidak, 29 baris = ±9 s hening yang tidak direncanakan. Output Cartesia ju
 
 Cartesia tidak punya kontrol pitch; `cartesia-vo.mjs` menggeser pitch lokal dengan ffmpeg
 `rubberband` (`formant=shifted`) setelah TTS. Batas aman: **−3 … +3 semitone**. Di atas itu
-terdengar seperti chipmunk/robot. Hasil +3 st pada Andi **belum pernah didengar manusia** saat
+terdengar seperti chipmunk/robot. Hasil +3 st pada Galang **belum pernah didengar manusia** saat
 preset ini ditulis — dengarkan `_review.mp3` pada video kisah pertama dan turunkan ke +2 bila
 aneh, lalu perbarui preset di JSON.
 
 ## Bahasa per baris
 
 `language` per tokoh/baris (default `id`). Contoh pelafalan bahasa Inggris memakai suara
-bilingual **Siti/Andi** (`id-ID,en-US`) dengan `"language": "en"` — diuji 10 Nov 2026.
+bilingual **Siti** (`id-ID,en-US`) dengan `"language": "en"` — diuji 10 Nov 2026.
 Bahasa lain (Arab, Jepang): cek dulu suaranya dengan
 `--list-voices --language ar` / `ja`; jangan memaksa suara Indonesia mengucapkan bahasa lain.
 
@@ -73,7 +84,7 @@ hanya didukung untuk **bahasa Inggris**. Untuk bahasa Indonesia, ekspresi datang
   "cast": {
     "narator":   { "voice": "Safira", "speed": 1.0 },
     "ayah":      { "voice": "Galang", "speed": 1.0 },
-    "anak-laki": { "voice": "Andi",   "speed": 1.06, "pitch": 3 }
+    "anak-laki": { "voice": "Galang", "speed": 1.06, "pitch": 3 }
   },
   "lines": [
     { "id": "s1a", "scene": "S1", "speaker": "narator",   "text": "Sore itu, Raka menatap sepeda tua di garasi." },

@@ -11,6 +11,7 @@ mudah gagal** kalau dipaksa dengan CSS murah.
 | Sepanjang video, banyak objek | **Jangan.** Turunkan ke V9 atau V6, dan catat alasan di `STYLE.md`. |
 | Butuh bayangan asli, pantulan, refraksi | **Jangan** diklaim 3D. Itu V8 (tiruan) atau ganti tipe. |
 | Ada GPU dan berani render lama | Three.js ≤ 6 detik total (bagian 11), bukan lebih. |
+| Serial yang dikunci 3D (`series.json` lock V7) | **Boleh sepanjang episode** lewat mesin seri (mis. `series/anak-pertama/3d`). Render 30 fps, ukur di bawah. |
 
 Kalau keputusan = "jangan", brief wajib diperbaiki, bukan card ini yang dilanggar.
 
@@ -38,6 +39,14 @@ Kalau keputusan = "jangan", brief wajib diperbaiki, bukan card ini yang dilangga
 
 Three.js ≤ 6 detik × 120fps. Blok catalog 3D tercatat ±108ms/frame di CPU (bagian 11);
 6 detik = ±78 detik render tambahan. **Ukur sekali** sebelum komit ke seluruh video.
+
+**Teruji 14 Nov 2026 (Anak Pertama Eps 1, 90 s penuh three.js):** satu `<canvas class="clip">` di root,
+`WORLD.render(t)` dari `onUpdate` timeline `main`, overlay 2D sub-composition transparan di atasnya.
+SwiftShader otomatis (tanpa GPU), 2.700 frame @30 fps = **70 menit** di 4 core; 0 frame hitam/beku.
+Gate `qa-video.mjs --fps 30`. Revisi = `tools/patch-splice.mjs` (tambalan per scene), bukan render penuh.
+Panduan lengkap: skill `/video-series` → `.claude/skills/video-series/references/serial-3d.md`.
+Kotak/viewport bulat (stiker, voice note): latar kartu pakai `radial-gradient` berlubang transparan,
+karena kanvas 3D ada **di bawah** overlay HTML.
 
 ## Dilarang
 

@@ -117,36 +117,36 @@ Snapshot 10 Nov 2026 (42 kategori, dibangkitkan dari JSON) — versi terkini:
 | Edukasi | `lingkungan-iklim` | sampah, iklim, energi, alam rusak & pulih | F7, F1, F11 | V13, V14, V27, V29, V24, V28 | narator=Galang | — |
 | Edukasi | `sains-alam` | kenapa langit biru, cara kerja tubuh, alam | F1, F8, F7 | V24, V13, V14, V22, V29, V7, V28, V18, V5 | narator=Siti | — |
 | Edukasi | `sejarah` | sejarah tokoh, tempat, teknologi | F10, F2, F8 | V25, V2, V4, V28, V3, V20, V24 | narator=Galang | — |
-| Pengembangan diri | `hubungan-sosial` | pertemanan, pasangan, komunikasi, etika bergaul | F9, F6, F5 | V23, V24, V5, V3, V20, V6 | narator=Safira, tokoh-1=Andi, tokoh-2=Citra | — |
+| Pengembangan diri | `hubungan-sosial` | pertemanan, pasangan, komunikasi, etika bergaul | F9, F6, F5 | V23, V24, V5, V3, V20, V6 | narator=Safira, tokoh-1=Galang, tokoh-2=Citra | — |
 | Pengembangan diri | `motivasi-tips` | tips cepat, opini, kebiasaan | F6, F5, F1 | V1, V9, V11, V16, V20, V21, V3 | narator=Galang | — |
 | Pengembangan diri | `parenting` | tips orang tua, tumbuh kembang anak | F6, F1, F9 | V24, V23, V6, V22, V27, V5 | narator=Ratna, orang-tua=Galang, anak=Citra | health_claims |
 | Pengembangan diri | `pelajaran-hidup` | hikmah, renungan, perumpamaan, filsafat ringan (stoik), kisah bermakna | F12, F2, F6 | V24, V25, V5, V14, V12, V2, V29, V1, V9 | narator=Ratna, tokoh-1=Galang, tokoh-2=Citra | — |
 | Pengembangan diri | `psikologi-perilaku` | bias pikiran, kebiasaan, emosi, kesehatan mental ringan | F1, F7, F5 | V23, V14, V12, V22, V13, V5, V9 | narator=Anisa | mental_health |
 | Uang & kerja | `bisnis-uang` | uang, bisnis, ekonomi | F3, F6, F1, F7 | V27, V9, V21, V8, V3, V18, V23 | narator=Galang | — |
-| Uang & kerja | `karier-kerja` | CV, wawancara, kerja tim, freelance, produktivitas kerja | F6, F4, F3, F9 | V10, V27, V9, V23, V1, V21, V3 | narator=Andi | — |
+| Uang & kerja | `karier-kerja` | CV, wawancara, kerja tim, freelance, produktivitas kerja | F6, F4, F3, F9 | V10, V27, V9, V23, V1, V21, V3 | narator=Galang | — |
 | Uang & kerja | `keuangan-pribadi` | anggaran, menabung, utang, investasi dasar | F6, F7, F1, F3 | V27, V21, V9, V23, V6, V3 | narator=Anisa | finance_disclaimer, time_sensitive |
-| Kisah | `kisah-anak` | dongeng, fabel, cerita anak non-religi | F2, F9 | V24, V23, V2, V6, V7, V5, V26 | narator=Siti, tokoh-1=Citra, tokoh-2=Andi, tokoh-3=Galang | fiksi |
-| Kisah | `kisah-drama` | fiksi dewasa: perjuangan hidup, persahabatan, cinta, kantor, perantauan | F2, F9 | V24, V25, V5, V3, V2, V4, V12 | narator=Intan, tokoh-pria=Galang, tokoh-wanita=Ratna, tokoh-muda=Andi, tokoh-muda-wanita=Citra | fiksi |
+| Kisah | `kisah-anak` | dongeng, fabel, cerita anak non-religi | F2, F9 | V24, V23, V2, V6, V7, V5, V26 | narator=Siti, tokoh-1=Citra, tokoh-2=Galang, tokoh-3=Galang | fiksi |
+| Kisah | `kisah-drama` | fiksi dewasa: perjuangan hidup, persahabatan, cinta, kantor, perantauan | F2, F9 | V24, V25, V5, V3, V2, V4, V12 | narator=Intan, tokoh-pria=Galang, tokoh-wanita=Ratna, tokoh-muda=Galang, tokoh-muda-wanita=Citra | fiksi |
 | Kisah | `kisah-inspiratif` | kisah nyata tokoh/biografi singkat, perjuangan orang sukses | F10, F2 | V28, V2, V3, V4, V27, V21, V9 | narator=Galang, pembaca-kutipan=Safira | real_persons |
-| Kisah | `kisah-keluarga` | kisah keluarga, kehidupan sehari-hari, moral, persahabatan | F2, F9 | V24, V25, V5, V2, V23, V6, V7 | narator=Safira, ayah=Galang, ibu=Ratna, anak-laki=Andi, anak-perempuan=Citra, kakek=Galang, nenek=Risa, teman=Andi | fiksi |
-| Kisah | `kisah-komedi` | sketsa lucu sehari-hari, salah paham, dialog | F13, F9, F2 | V20, V23, V12, V26, V6, V11 | narator=Siti, tokoh-1=Andi, tokoh-2=Galang, tokoh-3=Citra | fiksi |
-| Kisah | `kisah-seram` | cerita seram, urban legend, cerita rakyat mistis (tanpa gore) | F14, F2 | V25, V4, V15, V19, V12, V5 | narator=Galang, tokoh-1=Citra, tokoh-2=Andi, suara-misterius=Risa | fiksi, horror_safe |
+| Kisah | `kisah-keluarga` | kisah keluarga, kehidupan sehari-hari, moral, persahabatan | F2, F9 | V24, V25, V5, V2, V23, V6, V7 | narator=Safira, ayah=Galang, ibu=Ratna, anak-laki=Galang, anak-perempuan=Citra, kakek=Galang, nenek=Risa, teman=Galang | fiksi |
+| Kisah | `kisah-komedi` | sketsa lucu sehari-hari, salah paham, dialog | F13, F9, F2 | V20, V23, V12, V26, V6, V11 | narator=Siti, tokoh-1=Galang, tokoh-2=Galang, tokoh-3=Citra | fiksi |
+| Kisah | `kisah-seram` | cerita seram, urban legend, cerita rakyat mistis (tanpa gore) | F14, F2 | V25, V4, V15, V19, V12, V5 | narator=Galang, tokoh-1=Citra, tokoh-2=Galang, suara-misterius=Risa | fiksi, horror_safe |
 | Agama | `agama-ibadah` | tata cara ibadah, doa, makna ayat/hadis (bukan kisah) | F4, F1, F6 | V24, V22, V5, V27, V9, V2 | narator=Galang | adab |
-| Agama | `kisah-islami` | kisah nabi, sahabat, hikmah Al-Quran (anak & umum) | F2, F8 | V24, V5, V2, V28, V6, V25 | narator=Galang, tokoh-1=Citra, tokoh-2=Andi, tokoh-3=Ratna | adab |
+| Agama | `kisah-islami` | kisah nabi, sahabat, hikmah Al-Quran (anak & umum) | F2, F8 | V24, V5, V2, V28, V6, V25 | narator=Galang, tokoh-1=Citra, tokoh-2=Galang, tokoh-3=Ratna | adab |
 | Berita | `berita-hiburan` | berita artis, selebriti, musik, film, viral | F11, F10, F5 | V1, V21, V3, V27, V9, V16, V11, V4 | narator=Intan | real_persons, time_sensitive |
 | Berita | `berita-umum` | peristiwa terkini non-tech: kebijakan, bencana, ekonomi harian | F11, F7, F10 | V27, V28, V1, V9, V21, V3, V4 | narator=Intan | real_persons, time_sensitive |
-| Berita | `olahraga` | pertandingan, atlet, aturan main, rekor | F11, F6, F3, F10 | V27, V21, V11, V1, V9, V18, V26 | narator=Andi | real_persons, time_sensitive |
+| Berita | `olahraga` | pertandingan, atlet, aturan main, rekor | F11, F6, F3, F10 | V27, V21, V11, V1, V9, V18, V26 | narator=Galang | real_persons, time_sensitive |
 | Gaya hidup | `dunia-hewan` | fakta hewan, perilaku, merawat hewan peliharaan | F1, F8, F6 | V23, V24, V7, V6, V29, V2, V26 | narator=Siti | — |
 | Gaya hidup | `fashion-kecantikan` | padu padan, perawatan kulit, salah kaprah kecantikan | F6, F5, F4 | V8, V17, V16, V9, V3, V1 | narator=Siti | health_claims |
 | Gaya hidup | `kesehatan-hidup` | kesehatan, gaya hidup, psikologi ringan | F1, F5, F6 | V23, V24, V6, V22, V27, V14 | narator=Siti | health_claims |
 | Gaya hidup | `kuliner-resep` | resep, asal makanan, kenapa makanan X begitu | F4, F6, F1 | V6, V24, V2, V5, V7, V22, V3 | narator=Siti | — |
-| Gaya hidup | `otomotif` | cara kerja mesin, perawatan motor/mobil, perbandingan | F1, F4, F3 | V18, V7, V27, V10, V26, V29 | narator=Andi | — |
+| Gaya hidup | `otomotif` | cara kerja mesin, perawatan motor/mobil, perbandingan | F1, F4, F3 | V18, V7, V27, V10, V26, V29 | narator=Galang | — |
 | Gaya hidup | `pertanian-peternakan` | bertani, beternak, kebun rumah, ikan | F4, F1, F6 | V24, V2, V18, V27, V29, V6 | narator=Galang | — |
 | Gaya hidup | `rumah-diy` | tips rumah, bersih-bersih, perbaikan kecil, life hack | F4, F6 | V6, V2, V22, V7, V5, V18 | narator=Siti | safety |
 | Gaya hidup | `travel-budaya` | tempat, budaya daerah, tradisi, asal-usul nama | F10, F8, F6 | V28, V24, V2, V25, V3, V29 | narator=Galang | — |
-| Hiburan | `gaming` | budaya game, tips, sejarah game (tanpa aset game berhak cipta) | F6, F5, F3, F11 | V26, V15, V16, V19, V11, V21 | narator=Andi | copyright |
+| Hiburan | `gaming` | budaya game, tips, sejarah game (tanpa aset game berhak cipta) | F6, F5, F3, F11 | V26, V15, V16, V19, V11, V21 | narator=Galang | copyright |
 | Hiburan | `misteri-fakta-unik` | fakta aneh, misteri, 'kenapa bisa begitu' | F6, F7, F10 | V4, V15, V12, V25, V19, V13, V20 | narator=Galang | — |
-| Hiburan | `ulasan-film-buku` | ulasan/ringkasan film, buku, game (tanpa cuplikan berhak cipta) | F5, F6, F3 | V3, V20, V1, V4, V9, V11 | narator=Andi | — |
+| Hiburan | `ulasan-film-buku` | ulasan/ringkasan film, buku, game (tanpa cuplikan berhak cipta) | F5, F6, F3 | V3, V20, V1, V4, V9, V11 | narator=Galang | — |
 | Cadangan | `umum` | CADANGAN: topik yang tidak cocok kategori mana pun | F1, F6, F7, F5 | V23, V22, V3, V27, V9, V1, V24, V2, V5, V13 | narator=Galang | — |
 
 Tipe figuratif (V23 maskot, V25 siluet, V20 komik) tidak pernah dipilih sebagai aksen di

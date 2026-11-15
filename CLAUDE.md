@@ -33,6 +33,13 @@ Kalau user cuma bilang "buatkan video X", cari briefnya di `source/` dulu; tidak
 - `python3 tools/qa-variety.py` di snapshot (pra-render) dan MP4 — FAIL = perbaiki, bukan lapor.
 - Mesin tetap HyperFrames; Remotion **tidak** dipasang di repo ini (alasan: `peta-gaya.md` §7).
 
+### Mode serial (drama bersambung 3D)
+
+Folder `series/<nama>/` (saat ini **Anak Pertama**): gaya, format, suara dikunci di `series.json` + `BIBLE.md`.
+Pakai skill **`/video-series`** (`.claude/skills/video-series/`, panduan mesin `references/serial-3d.md` §2) dan template
+`series/<nama>/template/build-episode.mjs`. **Pengecualian render:** seri 3D = **30 fps** tanpa blend 120→60
+(three.js di CPU, ±80 menit/episode); gate `qa-video.mjs --fps 30`; revisi lewat `tools/patch-splice.mjs`.
+
 ### Dua mode: faceless vs presenter
 
 | Mode | Skill | Input | Kapan |
@@ -58,7 +65,7 @@ npx -y hyperframes@latest init "videos/<slug>" --non-interactive --example=blank
 npx --yes hyperframes@0.8.169 lint
 npx --yes hyperframes@0.8.169 check
 
-# render (SELALU pakai low-memory off + 120fps)
+# render (SELALU pakai low-memory off + 120fps; kecuali seri 3D = 30 fps, lihat Mode serial)
 PRODUCER_LOW_MEMORY_MODE=false npx --yes hyperframes@0.8.169 render \
   --quality looks --video-bitrate 14M --fps 120 -o renders/raw120.mp4
 

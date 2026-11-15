@@ -1,6 +1,6 @@
 ---
 name: video-reels
-description: Buat video Reels/TikTok 9:16 dari SATU TOPIK ("/video-reels apa itu docker?") atau dari path brief markdown (source/brief-*.md). Mode topik riset ≥3 sumber → naskah 60-120 detik bahasa bayi → pilih arahan visual otomatis (29 tipe V, layout K, palet, tipografi; rotasi dari STYLE-LEDGER) → VO Cartesia (multi-suara untuk kisah keluarga/kehidupan/islami/anak). Topik apa pun (42 kategori + cadangan `umum`): tech, edukasi sekolah, bahasa, sains, sejarah, pelajaran hidup, psikologi, hubungan, parenting, karier, keuangan, kisah islami/keluarga/drama/komedi/seram/inspiratif, berita artis/umum, olahraga, kuliner, travel, hewan, otomotif, gaming, DIY, pertanian, kecantikan, ibadah → komposisi HyperFrames → render 120fps, blend 60fps → verifikasi MP4 (frame hitam/beku + gate variasi visual).
+description: Buat video Reels/TikTok 9:16 (sekali jadi, BUKAN episode serial — itu video-series) dari SATU TOPIK ("/video-reels apa itu docker?") atau dari path brief markdown (source/brief-*.md). Mode topik riset ≥3 sumber → naskah 60-120 detik bahasa bayi → pilih arahan visual otomatis (29 tipe V, layout K, palet, tipografi; rotasi dari STYLE-LEDGER) → VO Cartesia (multi-suara untuk kisah keluarga/kehidupan/islami/anak). Topik apa pun (42 kategori + cadangan `umum`): tech, edukasi sekolah, bahasa, sains, sejarah, pelajaran hidup, psikologi, hubungan, parenting, karier, keuangan, kisah islami/keluarga/drama/komedi/seram/inspiratif, berita artis/umum, olahraga, kuliner, travel, hewan, otomotif, gaming, DIY, pertanian, kecantikan, ibadah → komposisi HyperFrames → render 120fps, blend 60fps → verifikasi MP4 (frame hitam/beku + gate variasi visual).
 ---
 
 # /video-reels — topik atau brief → MP4
@@ -18,6 +18,12 @@ Semua perintah dijalankan dari **root repo** (`video-motion/`) kecuali yang dita
 
 Mode topik berjalan **tanpa berhenti** sampai MP4 (user minta satu perintah). Jangan bertanya
 kecuali topik benar-benar tak bisa ditebak; tulis asumsi di brief.
+
+## Serial bersambung → pakai `/video-series`
+
+Episode serial dengan tokoh tetap (`series/<nama>/` ada, mis. Anak Pertama) **tidak** dibuat di skill ini.
+Pakai `/video-series` (`.claude/skills/video-series/SKILL.md`): gaya, format, dan suara dikunci per serial,
+render 3D 30 fps, template build, tambalan per scene. Aturan komposisi & audio di skill ini tetap berlaku.
 
 ## Fase A — topik → BRIEF.md (mode topik saja)
 
@@ -153,7 +159,8 @@ Auth HeyGen fallback: `~/.heygen/credentials` (kalau env tidak ada).
 
 **SFX — cek `shared/sfx/` dulu** (`ls shared/sfx`): `chime-soft`, `error-thud`, `keyboard-typing`,
 `lock-click`, `pop`, `riser`, `swipe`, `thunk`, `tick`, `whoosh`, `paper`, `impact-boom`, `bass-rumble`,
-`gas-hiss`, `chalk-long`, `chalk-short`, `shutter-noise`. Copy yang cocok. Kalau tidak ada,
+`gas-hiss`, `chalk-long`, `chalk-short`, `shutter-noise`, dan bunyi game 8-bit `px-coin/jump/blip/power/hit/clear/step/door/unlock/wipe/type`
+(`python3 -I tools/sfx-chip.py <folder>` untuk membuat ulang). Copy yang cocok. Kalau tidak ada,
 baru ambil dari katalog lewat `searchSounds(query, "sound_effects", headers)` + `downloadTo()`
 (`~/.agents/skills/media-use/audio/scripts/lib/heygen.mjs`; tipe `"sfx"` ditolak HTTP 400).
 Katalog sering **kosong** untuk bunyi spesifik ("chalk", "shutter", "click" — dicek 11 Nov 2026):
@@ -258,6 +265,9 @@ Scene di `data-track-index` berbeda supaya tidak saling menutupi saat transisi.
 | `index.html` memasang `*{box-sizing:border-box}` dan itu **berlaku di sub-composition** — elemen ber-border yang ukurannya dihitung sebagai content-box wajib `box-sizing:content-box` | Bingkai polaroid menyusut, baris teks tertutup border (#15) |
 | Elemen yang di-`pop()` (fromTo scale 0→1, `immediateRender:false`) wajib `hide()` dulu | Tampil penuh sejak t=0 sampai saat pop |
 | Elemen yang dirancang semi-transparan (bar pilihan, panel redup) jangan masuk lewat helper `fadeIn` → opacity 1; tween ke nilai rancangannya | Bar biru jadi solid, teks di atasnya tak terbaca — `check` kontras **tidak** menangkap ini (#15) |
+| `tl.set(el,{textContent:'000100'})` — GSAP memperlakukan string angka sebagai **angka** (jadi `100`). Awali dengan `'\u200B'` atau pakai karakter non-angka | Skor kehilangan nol di depan (#18) |
+| Transisi yang **menutup layar penuh** (wipe blok, iris, layar "LEVEL") memakai warna dengan kecerahan > 40/255 — jangan warna tinta/hitam palet | Gate frame hitam menghitungnya hitam: 70 frame di render pertama #18 (wipe `#0D1028`) |
+| Gaya bergerak bertahap (V26, V19, V21) tetap butuh **elemen yang berubah tiap ≤ 0,25 s** di tiap scene (kursor berkedip, idle sprite, ikon memantul) | `qa-video` menandai blok beku ≥ 0,5 s; di #18 ada 10 blok (S5–S7, S10) |
 
 Kepadatan mengikuti Event Map brief (target 1 kejadian ≤1.5s), bukan tebakan.
 

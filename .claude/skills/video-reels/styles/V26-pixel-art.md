@@ -34,6 +34,25 @@ proses = musuh yang di-kill). Bahasa yang langsung dipahami penonton muda.
 - Rules: `discrete-text-sequence`, `counting-dynamic-scale`, `particle-burst` (koin/ledakan
   kotak, partikel = kotak).
 
+## Teruji di render (#18 `bikin-script-bash-linux-pertamamu`)
+
+Resep jalan; contoh lengkap `videos/bikin-script-bash-linux-pertamamu/build.mjs` (sprite dari array
+string → SVG `<rect>` per run horizontal, `shape-rendering:crispEdges`, frame = `<div>` bertumpuk yang
+di-`tl.set` opacity). Pelajaran:
+
+- **Wipe/transisi penutup layar jangan warna gelap.** Blok `#0D1028` → 70 frame terhitung hitam.
+  Pakai plum/plumD (kecerahan > 40).
+- **Frame ditahan = "frame beku" di `qa-video`.** Per scene 58–78% frame identik — itu sifat gaya
+  (override audit generik, seperti kamera mati V1/V9). Yang wajib nol hanya **blok diam ≥ 0,5 s**:
+  isi dengan kursor berkedip 4 Hz, idle sprite 4 Hz, ikon memantul 12 px.
+- **Translasi sprite** tetap memakai langkah ≤ 0,05 s (aturan anti patah-patah); frame kaki/wajah
+  boleh 4–8 Hz.
+- Press Start 2P lebar 1 em/huruf → hitung lebar tiap judul; VT323 0,4 em. Tilde VT323 kecil
+  terlihat seperti `≈` di ukuran ≤ 48 px.
+- Angka skor: `textContent` diawali `\u200B` (GSAP mengubah "000100" jadi 100).
+- **Biaya terukur:** 120 s @120 fps → render 27–29 menit (software GPU), raw 39 MB, final 14 MB
+  (bidang datar = bitrate rendah). Dirender 3× (frame hitam wipe, lalu jeda diam).
+
 ## Batas render
 
 Sprite ≤ 48×48 piksel logis; ≤ 12 sprite aktif. Satu SVG per frame sprite (bukan ribuan div).
