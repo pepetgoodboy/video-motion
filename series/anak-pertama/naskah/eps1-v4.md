@@ -30,3 +30,59 @@ Ditutup cliffhanger Raka + kartu BERSAMBUNG… (Eps 2: HP Baru Raka). Sumber dat
 | n23 | Untuk pertama kalinya bulan ini, aku nyisain sedikit buat diriku sendiri. |
 | n24 | Kalau kamu anak pertama, gajimu sisa berapa buat dirimu sendiri? |
 | n25 | Besoknya, Raka nelepon. Kak, temen-temenku udah pada ganti HP. |
+
+## Posting Facebook (Reels)
+
+Cover: `videos/anak-pertama-eps1-v4/renders/cover-eps1.jpg` (frame judul, t = 20,1 s).
+Hashtag: 4 tag tetap seri + 1 tag episode (`#Gajian`). Pilih satu varian; varian lain untuk uji A/B.
+
+### Varian A — angka (direkomendasikan untuk Eps 1)
+```
+Gaji masuk jam 9. Jam 9 lewat 5, tinggal Rp300 ribu.
+
+Satu gaji, banyak yang menunggu: Ibu di kampung, kuliah adik, kos, listrik rumah. Dinda nggak pernah ngeluh. Sampai satu pesan suara dari Ibu datang malam itu.
+
+Kamu anak pertama juga? Gajimu sisa berapa buat dirimu sendiri? Tulis di komentar.
+
+ANAK PERTAMA · Eps 1: Gaji Jam 9
+Ikuti halaman ini biar nggak ketinggalan Eps 2: HP Baru Raka.
+
+#AnakPertama #GenerasiSandwich #DramaKeluarga #AnimasiIndonesia #Gajian
+```
+
+### Varian B — panggil penonton
+```
+Buat kamu anak pertama yang gajinya habis sebelum sempat dinikmati.
+
+Dinda transfer ke Ibu, bayar kuliah adiknya, bayar kos. Sisanya Rp300 ribu. Waktu diajak makan bakso, dia bilang sudah makan. Padahal belum.
+
+Pernah ada di posisi Dinda? Ceritain di komentar.
+
+ANAK PERTAMA · Eps 1: Gaji Jam 9
+Ikuti halaman ini biar nggak ketinggalan Eps 2: HP Baru Raka.
+
+#AnakPertama #GenerasiSandwich #DramaKeluarga #AnimasiIndonesia #Gajian
+```
+
+### Varian C — pengakuan tokoh
+```
+"Aku bilang aku udah makan. Padahal belum."
+
+Hari gajian Dinda cuma bertahan lima menit. Tapi malam itu Ibu mengirim sesuatu yang bikin dia nangis.
+
+Kalau kamu anak pertama, gajimu sisa berapa buat dirimu sendiri?
+
+ANAK PERTAMA · Eps 1: Gaji Jam 9
+Ikuti halaman ini biar nggak ketinggalan Eps 2: HP Baru Raka.
+
+#AnakPertama #GenerasiSandwich #DramaKeluarga #AnimasiIndonesia #Gajian
+```
+
+### Komentar pin
+```
+Jujur aja: dari gaji bulan ini, berapa yang benar-benar buat dirimu sendiri?
+A. Nggak ada sama sekali
+B. Di bawah 10%
+C. 10–30%
+D. Lebih dari 30%
+```

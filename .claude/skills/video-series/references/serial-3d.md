@@ -71,6 +71,7 @@ Semua perintah dari root repo kecuali disebut lain. Folder episode: `videos/<slu
    (selalu sebut tambalan lama di `--with`).
 9. **Catat**: `BIBLE.md` §9 (log), baris baru `STYLE-LEDGER.md`, naskah di `series/anak-pertama/naskah/eps<n>.md`.
    Versi lama episode yang sama → file `videos/<versi-lama>/SUPERSEDED`.
+10. **Posting**: caption 3 varian + hashtag + komentar pin + cover (`../SKILL.md` Langkah 10).
 
 Edit 3D selalu di `series/<seri>/3d/`, **bukan** di `assets/vendor/` (ditimpa tiap build).
 

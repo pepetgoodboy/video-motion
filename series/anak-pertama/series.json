@@ -128,5 +128,23 @@
       "caption gaya ref3: 2–3 kata kapital Archivo ramping (font-stretch 75%), tanpa tanda baca",
       "ditutup cliffhanger + kartu BERSAMBUNG… Eps berikutnya"
     ]
+  },
+  "posting": {
+    "platform": "facebook (Reels)",
+    "since": "2026-11-15",
+    "hashtag_tetap": [
+      "#AnakPertama",
+      "#GenerasiSandwich",
+      "#DramaKeluarga",
+      "#AnimasiIndonesia"
+    ],
+    "aturan": [
+      "total 3–5 hashtag DI CAPTION (bukan di komentar): 4 tag tetap seri + maks 1 tag khas episode; tanpa #fyp/#viral/tag generik",
+      "baris pertama = hook pendek (±90 karakter) dari kalimat pertama naskah, karena hanya awal caption yang terlihat sebelum dipotong",
+      "1–2 kalimat konteks tanpa membocorkan twist; pertanyaan penonton = pertanyaan di video; baris seri 'ANAK PERTAMA · Eps n: Judul' + ajakan ikuti untuk Eps n+1",
+      "3 varian caption (pola hook berbeda) untuk A/B; komentar pin berisi pertanyaan pilihan ganda",
+      "cover = frame judul episode (renders/cover-eps<n>.jpg)",
+      "bahasa penonton, tanpa klaim/angka karangan; patuhi content_rules (uang = pilihan tokoh, bukan saran)"
+    ]
   }
 }

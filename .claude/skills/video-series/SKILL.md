@@ -48,6 +48,7 @@ Ikuti `references/serial-3d.md` §2 apa adanya (berisi perintah lengkap). Ringka
 | 7 | final: loudness → −15 LUFS, `qa-video.mjs --fps 30`, `qa-variety.py`, frame dari MP4 | FAIL = perbaiki, bukan lapor |
 | 8 | revisi lewat `tools/patch-splice.mjs` (+ `--with` tambalan lama) | bukan render penuh |
 | 9 | `BIBLE.md` §9, `STYLE-LEDGER.md`, file `SUPERSEDED` di versi lama | |
+| 10 | caption + hashtag + komentar pin + cover | aturan di bawah; tulis ke `series/<seri>/naskah/eps<n>.md` bagian "Posting" |
 
 ## Aturan naskah (format `narator-aku`, Anak Pertama)
 
@@ -59,12 +60,27 @@ Ikuti `references/serial-3d.md` §2 apa adanya (berisi perintah lengkap). Ringka
 - Penutup: pertanyaan ke penonton (ajak komentar) → cliffhanger episode berikutnya → kartu "BERSAMBUNG…".
 - Patuhi `content_rules` (Anak Pertama: soal uang = pilihan tokoh, bukan saran keuangan).
 
+## Langkah 10 — caption & hashtag (posting)
+
+Platform & tag tetap dari `series.json → posting` (Anak Pertama: Facebook Reels). Muat skill `m-copy` untuk pola hook.
+
+- **3 varian caption** dengan pola hook berbeda (angka/pain, panggil penonton, pengakuan tokoh) untuk uji A/B.
+- **Baris pertama** = hook pendek (±90 karakter) dari kalimat pertama naskah, karena hanya awal caption yang
+  terlihat sebelum dipotong. Lalu 1–2 kalimat konteks **tanpa membocorkan twist**.
+- **Pertanyaan ke penonton** = pertanyaan yang sama dengan di video. Lalu baris seri
+  `ANAK PERTAMA · Eps n: Judul` + ajakan ikuti untuk episode berikutnya (judul dari `BIBLE.md` §6).
+- **Hashtag 3–5 di caption** (bukan di komentar): tag tetap seri + maks 1 tag khas episode. Tanpa #fyp/#viral.
+- **Komentar pin**: pertanyaan pilihan ganda yang memancing jawaban.
+- **Cover**: frame judul episode → `ffmpeg -ss <t judul> -i <final> -frames:v 1 -q:v 2 renders/cover-eps<n>.jpg`, lalu lihat.
+- Bahasa penonton, tanpa klaim/angka karangan; patuhi `content_rules`.
+
 ## Gerbang sebelum bilang "selesai"
 
 - 0 frame hitam, 0 blok beku ≥ 0,5 s (`qa-video.mjs --fps 30`), loudness −14…−16 LUFS, `qa-variety` tanpa FAIL.
 - Frame dari MP4 dilihat: alis sedih tidak tampak marah, adegan malam benar-benar gelap, wajah tidak tertutup
   kartu/caption, tokoh berpose "phone" memegang HP, lingkaran 3D (pikiran/video call/avatar) berisi wajah.
-- Laporan ke user: path final, durasi, hasil gate, waktu render, bug yang ditemukan + diperbaiki, yang belum di-commit.
+- Laporan ke user: path final + cover, caption varian A siap tempel (B/C di file naskah), durasi, hasil gate,
+  waktu render, bug yang ditemukan + diperbaiki, yang belum di-commit.
 
 ## §5 Merintis serial baru
 
