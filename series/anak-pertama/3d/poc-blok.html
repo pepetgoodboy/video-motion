@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000;overflow:hidden}</style></head><body>
+<script src="vendor/three.min.js"></script><script src="char3d.js"></script><script src="blok.js"></script><script src="post.js"></script><script>
+// Uji gaya ref3: tokoh balok + wajah dilukis + garis tepi + matahari lewat jendela. ?mode=lineup|shot
+const mode = new URLSearchParams(location.search).get("mode") || "lineup";
+const W = mode === "lineup" ? 1920 : 1080, H = mode === "lineup" ? 1080 : 1920, T = THREE, t0 = performance.now();
+const R = AP3D.makeRenderer(W, H); R.toneMappingExposure = 1.05; document.body.appendChild(R.domElement);
+const scene = new T.Scene(); scene.background = new T.Color("#E8D6B3");
+const room = AP3D.makeRoomSun({ props: [{ t: "bed", x: -2.4 }, { t: "desk", x: 2.4, z: -2.0 }, { t: "frame", x: -0.6, y: 3.6 }] }); scene.add(room);
+scene.add(new T.HemisphereLight("#FFF1DC", "#B88E66", 0.75));
+const sun = new T.DirectionalLight("#FFE1B0", 2.6); const sp = room.userData.sun; sun.position.set(...sp.pos); sun.target.position.set(...sp.target);
+sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048); Object.assign(sun.shadow.camera, { left: -6, right: 6, top: 6, bottom: -6, near: 1, far: 30 }); sun.shadow.radius = 1.5; sun.shadow.bias = -0.0004; scene.add(sun, sun.target);
+const fill = new T.DirectionalLight("#FFE6CC", 0.45); scene.add(fill, fill.target);
+const keys = ["dinda", "ibu", "raka", "mega", "hendra"], ex = ["senang", "haru", "licik", "kaget", "netral"];
+const C = keys.map((k, i) => { const c = AP3D.makeCharBlok(k); c.root.position.set(mode === "lineup" ? -3.2 + i * 1.6 : 0.2, 0, 0.6); c.root.rotation.y = mode === "lineup" ? 0.15 - i * 0.05 : -0.2; c.setExpr(ex[i]); c.updateFace(); scene.add(c.root); if (mode !== "lineup" && i) c.root.visible = false; return c; });
+if (mode === "shot") { const P = C[0].parts; P.armL.rotation.set(-0.95, 0, 0.32); P.elbowL.rotation.set(-1.4, 0, 0); C[0].setExpr("netral"); C[0].setGaze([0.012, -0.02]); C[0].updateFace(); const ph = AP3D.makePhone(); ph.position.set(0, -0.42, 0.1); ph.rotation.set(-0.5, 0, 0); P.elbowL.add(ph); }
+const cam = new T.PerspectiveCamera(mode === "lineup" ? 34 : 40, W / H, 0.1, 100);
+if (mode === "lineup") { cam.position.set(0, 3.2, 9.5); cam.lookAt(0, 1.7, 0); } else { cam.position.set(0.9, 2.7, 6.6); cam.lookAt(0.3, 2.35, 0); }
+fill.position.copy(cam.position); fill.target.position.set(0, 1.6, 0);
+if (mode === "shot") { const cup = new T.Mesh(new T.CylinderGeometry(0.16, 0.13, 0.36, 24), new T.MeshStandardMaterial({ color: "#E8743B", roughness: 0.4 })); cup.position.set(1.55, 2.0, 4.1); scene.add(cup);
+  const plate = new T.Mesh(new T.CylinderGeometry(0.4, 0.34, 0.05, 32), new T.MeshStandardMaterial({ color: "#FFFDF8", roughness: 0.4 })); plate.position.set(-0.7, 1.75, 4.3); scene.add(plate); }
+const post = AP3D.makePost(R, W, H);
+if (mode === "shot") post.render(scene, cam, { focus: cam.position.distanceTo(new T.Vector3(0.2, 2.5, 0.6)), range: 0.5, dof: 0.45, bloom: 0.55, threshold: 0.9, exposure: 1.05, warm: 1, vig: 0.35 }); else R.render(scene, cam);
+document.title = "done " + Math.round(performance.now() - t0) + "ms";
+</script></body></html>

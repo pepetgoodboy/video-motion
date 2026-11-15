@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "duration": 35,
+    "istilah": [],
+    "catatan": "uji suara serial Anak Pertama — 6 peran, dinda-batin = suara sama + efek"
+  },
+  "cast": {
+    "dinda": {
+      "voice": "Citra",
+      "speed": 1
+    },
+    "dinda-batin": {
+      "voice": "Citra",
+      "speed": 0.96
+    },
+    "ibu": {
+      "voice": "Ratna",
+      "speed": 0.94,
+      "pitch": -1
+    },
+    "raka": {
+      "voice": "Galang",
+      "speed": 1.06,
+      "pitch": 2
+    },
+    "mega": {
+      "voice": "Siti",
+      "speed": 1.04
+    },
+    "hendra": {
+      "voice": "Galang",
+      "speed": 0.96,
+      "pitch": -2
+    },
+    "rini": {
+      "voice": "Safira",
+      "speed": 1.02,
+      "pitch": -1
+    }
+  },
+  "lines": [
+    {
+      "id": "v01",
+      "scene": "S1",
+      "speaker": "dinda-batin",
+      "text": "Gajiku masuk jam sembilan."
+    },
+    {
+      "id": "v02",
+      "scene": "S1",
+      "speaker": "dinda-batin",
+      "text": "Jam sembilan lewat lima, sudah habis."
+    },
+    {
+      "id": "v03",
+      "scene": "S1",
+      "speaker": "ibu",
+      "text": "Nak, uang kuliah Raka sudah dikirim?"
+    },
+    {
+      "id": "v04",
+      "scene": "S1",
+      "speaker": "dinda",
+      "text": "Sudah, Bu. Tadi pagi."
+    },
+    {
+      "id": "v05",
+      "scene": "S1",
+      "speaker": "raka",
+      "text": "Makasih, Kak! Nanti aku ganti, janji."
+    },
+    {
+      "id": "v06",
+      "scene": "S1",
+      "speaker": "mega",
+      "text": "Din, makan bakso yuk! Aku traktir setengah."
+    },
+    {
+      "id": "v07",
+      "scene": "S1",
+      "speaker": "dinda",
+      "text": "Aku udah makan kok, Meg."
+    },
+    {
+      "id": "v08",
+      "scene": "S1",
+      "speaker": "dinda-batin",
+      "text": "Belum. Tapi nggak apa-apa."
+    },
+    {
+      "id": "v09",
+      "scene": "S1",
+      "speaker": "hendra",
+      "text": "Dinda, laporan bulanan sudah siap?"
+    },
+    {
+      "id": "v10",
+      "scene": "S1",
+      "speaker": "dinda",
+      "text": "Siap, Pak!"
+    },
+    {
+      "id": "v11",
+      "scene": "S1",
+      "speaker": "ibu",
+      "text": "Nak... kamu juga makan yang enak, ya."
+    }
+  ]
+}

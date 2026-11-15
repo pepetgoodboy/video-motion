@@ -1,0 +1,132 @@
+{
+  "slug": "anak-pertama",
+  "title": "Anak Pertama",
+  "logline": "Dinda, 25, anak sulung perantau di Jakarta: satu gaji, banyak yang menunggu.",
+  "category": "kisah-drama",
+  "tone": "dramedi hangat-getir; emosi dibawa monolog batin Dinda, bukan teriakan",
+  "duration_target": [
+    90,
+    120
+  ],
+  "lock": {
+    "style": {
+      "main": "V7",
+      "name": "3D kartun (three.js di HyperFrames)",
+      "accent": null,
+      "engine": "series/anak-pertama/3d — char3d.js (tokoh + set) + world.js (mesin adegan)",
+      "fps": 30,
+      "since": "2026-11-14: Eps 1 dibangun ulang 3D; pilot 2D V23 diarsipkan",
+      "look": "arah ref3: tokoh BALOK (blok.js makeCharBlok) + wajah dilukis + garis tepi, ruangan bermatahari (makeRoomSun, petak cahaya jendela), post.js (glow, blur kedalaman, grading hangat, FXAA); malam = bohlam tunggal, dinding lebih gelap"
+    },
+    "palette": {
+      "code": "S-SENJA",
+      "name": "Senja hangat",
+      "colors": {
+        "paper": "#FBF3E4",
+        "ink": "#3B2F2A",
+        "teal": "#2F7F86",
+        "mustard": "#F2B32E",
+        "coral": "#E07A5F",
+        "rose": "#E9A6B5",
+        "sky": "#9CC9D9",
+        "leaf": "#7DB46C"
+      }
+    },
+    "typography": {
+      "code": "T12",
+      "display": "Fredoka",
+      "accent": "Nunito",
+      "mono": "Geist Mono"
+    },
+    "music": "warm acoustic guitar and soft piano, hopeful, gentle, slice of life, instrumental",
+    "title_card": "ANAK PERTAMA · Eps {n} — 1 detik setelah hook, tas selempang kuning Dinda sebagai ikon"
+  },
+  "cast": {
+    "narator": {
+      "name": "Narator",
+      "voice": "Anisa",
+      "speed": 1.0,
+      "pitch": 0,
+      "role": "(arsip v3) narator orang ketiga — sejak v4 narator = Dinda sendiri"
+    },
+    "dinda": {
+      "name": "Dinda",
+      "voice": "Citra",
+      "speed": 1,
+      "pitch": 0,
+      "role": "tokoh utama, anak sulung, 25"
+    },
+    "dinda-batin": {
+      "name": "Dinda (batin)",
+      "voice": "Citra",
+      "speed": 0.96,
+      "pitch": 0,
+      "role": "monolog batin = narator",
+      "fx": "batin"
+    },
+    "ibu": {
+      "name": "Ibu",
+      "voice": "Ratna",
+      "speed": 0.94,
+      "pitch": -1,
+      "role": "ibu Dinda di kampung, 52"
+    },
+    "raka": {
+      "name": "Raka",
+      "voice": "Galang",
+      "speed": 1.06,
+      "pitch": 2,
+      "role": "adik, mahasiswa, 19"
+    },
+    "mega": {
+      "name": "Mega",
+      "voice": "Siti",
+      "speed": 1.04,
+      "pitch": 0,
+      "role": "sahabat sekamar kos, 25"
+    },
+    "hendra": {
+      "name": "Pak Hendra",
+      "voice": "Faiz",
+      "speed": 0.98,
+      "role": "atasan Dinda, 45",
+      "language": "id"
+    },
+    "rini": {
+      "name": "Tante Rini",
+      "voice": "Safira",
+      "speed": 1.02,
+      "pitch": -1,
+      "role": "tante julid (episode tertentu)"
+    }
+  },
+  "voice_rules": [
+    "Suara pria Indonesia di Cartesia tinggal Galang (Andi dihapus, 14 Nov 2026). Raka = Galang +2 st. Pak Hendra = Faiz (voice Melayu berbahasa Indonesia, STT jelas) supaya timbre bos berbeda dari keluarga Dinda.",
+    "Emosi lewat naskah (kalimat pendek, jeda, seruan) + speed per baris (sedih 0,92; kaget 1,1). Parameter emotion Cartesia tidak berlaku untuk bahasa Indonesia."
+  ],
+  "episode_beats": [
+    "hook 0–3 s: kalimat yang menusuk + teks layar ≤ 7 kata",
+    "kartu judul 1 s",
+    "dilema: dunia & masalah hari ini",
+    "pilihan / konflik memuncak",
+    "pembalikan di 70–85% durasi",
+    "penutup hangat + pertanyaan pilihan ke penonton",
+    "teaser 1–2 s episode berikutnya (opsional)"
+  ],
+  "content_rules": [
+    "fiksi orisinal; nama tokoh tidak merujuk orang nyata",
+    "uang = pilihan tokoh, bukan saran keuangan",
+    "duka (Bapak) dan kesehatan mental ditulis lembut, tanpa adegan menyakiti diri"
+  ],
+  "format": {
+    "mode": "narator-aku",
+    "since": "2026-11-15 (Eps 1 v4, arah ref3)",
+    "aturan": [
+      "Dinda bercerita sendiri ('aku', suara Citra) dari detik 0, suara mengisi ±85–95% durasi",
+      "kutipan tokoh lain dibacakan Dinda + caption berlabel nama & warna (IBU pink, RAKA hijau, PAK HENDRA biru); 1–2 kutipan emosional pakai suara tokohnya",
+      "1 shot per kalimat atau lebih cepat + sisipan benda/grafis; sudut kamera bervariasi (rendah, 3/4 samping), benda blur di latar depan",
+      "caption gaya ref3: 2–3 kata kapital Archivo ramping (font-stretch 75%), tanpa tanda baca",
+      "ditutup cliffhanger + kartu BERSAMBUNG… Eps berikutnya"
+    ]
+  }
+}

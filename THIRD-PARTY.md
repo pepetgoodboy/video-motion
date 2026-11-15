@@ -16,6 +16,11 @@ atau mendistribusikan ulang repo ini, baca bagian ini.
 Kalau kebutuhanmu tidak tercakup lisensi standar (mis. membundel GSAP ke produk SaaS yang dijual),
 cek opsi lisensi komersial GreenSock.
 
+## three.js 0.149.0
+
+`series/anak-pertama/3d/vendor/three.min.js` — mesin 3D serial (dimuat di dalam komposisi HyperFrames).
+Lisensi **MIT**, © 2010-2023 three.js authors; teks lengkap di `series/anak-pertama/3d/vendor/LICENSE`.
+
 ## Font — `shared/fonts/`
 
 Semua file adalah subset latin dari Google Fonts, berlisensi **SIL Open Font License 1.1 (OFL-1.1)**.
@@ -38,6 +43,8 @@ Semua file adalah subset latin dari Google Fonts, berlisensi **SIL Open Font Lic
 | `nunito-var-latin.woff2` | Nunito (variable) |
 | `geist-mono-latin.woff2` | Geist Mono |
 | `unbounded-latin.woff2` | Unbounded |
+| `press-start-2p-latin.woff2` | Press Start 2P |
+| `vt323-latin.woff2` | VT323 |
 
 OFL mengizinkan penggunaan dan redistribusi font, termasuk di dalam video komersial.
 Kalau kamu mendistribusikan ulang file font-nya, sertakan teks lisensi OFL dari masing-masing
@@ -48,7 +55,7 @@ keluarga font.
 
 ## SFX — `shared/sfx/`
 
-17 file efek suara. Tiga file (`chalk-long`, `chalk-short`, `shutter-noise`) dibuat di repo ini dari noise sintetis ffmpeg (lisensi mengikuti repo, MIT). **Sumber lisensi 14 file lainnya belum terdokumentasi di repo ini.**
+28 file efek suara. Tiga file (`chalk-long`, `chalk-short`, `shutter-noise`) dibuat di repo ini dari noise sintetis ffmpeg, dan 11 file `px-*` (bunyi game 8-bit) dari `tools/sfx-chip.py` — semuanya lisensi mengikuti repo (MIT). **Sumber lisensi 14 file lama lainnya belum terdokumentasi di repo ini.**
 `audio_meta.json` pada tiap video bisa berisi field `license` dan `credit`; kalau kosong, asal
 file tidak tercatat.
 
@@ -63,6 +70,7 @@ Sebelum mempublikasikan repo ini lebih jauh, lakukan salah satu:
 | `bass-rumble.mp3` | _belum dicatat_ | _?_ | _?_ |
 | `chalk-long.mp3`, `chalk-short.mp3` | sintesis ffmpeg (`anoisesrc` pink + bandpass 3,6 kHz + tremolo), 11 Nov 2026 | MIT (repo ini) | — |
 | `shutter-noise.mp3` | sintesis ffmpeg (`anoisesrc` white + highpass), 11 Nov 2026 | MIT (repo ini) | — |
+| `px-*.mp3` (11 file) | sintesis `tools/sfx-chip.py` (gelombang kotak + noise), 13 Nov 2026 | MIT (repo ini) | — |
 | `chime-soft.mp3` | _belum dicatat_ | _?_ | _?_ |
 | `error-thud.mp3` | _belum dicatat_ | _?_ | _?_ |
 | `gas-hiss.mp3` | _belum dicatat_ | _?_ | _?_ |

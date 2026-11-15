@@ -1,0 +1,10 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000;overflow:hidden}</style></head><body>
+<script src="vendor/three.min.js"></script><script src="char3d.js"></script><script>
+const W=1920,H=1080,T=THREE;const R=AP3D.makeRenderer(W,H);document.body.appendChild(R.domElement);
+const scene=new T.Scene();scene.background=new T.Color('#F4E6CF');
+const fl=new T.Mesh(new T.PlaneGeometry(30,30),new T.MeshStandardMaterial({color:'#EBD5B3',roughness:.9}));fl.rotation.x=-Math.PI/2;fl.receiveShadow=true;scene.add(fl);
+AP3D.makeLights(scene,false);
+const keys=['dinda','ibu','raka','mega','hendra'],ex=['senang','netral','senang','senang','netral'];
+keys.forEach((k,i)=>{const c=AP3D.makeChar(k);c.root.position.set((i-2)*1.75,0,0);c.root.rotation.y=(i-2)*-0.08;c.setExpr(ex[i]);scene.add(c.root);});
+const cam=new T.PerspectiveCamera(26,W/H,0.1,100);cam.position.set(0,2.2,13.5);cam.lookAt(0,1.6,0);R.render(scene,cam);
+</script></body></html>

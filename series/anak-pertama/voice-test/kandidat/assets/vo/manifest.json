@@ -1,0 +1,54 @@
+[
+  {
+    "id": "k1",
+    "scene": "S1",
+    "speaker": "raka-galang",
+    "text": "Makasih, Kak! Nanti aku ganti, janji.",
+    "language": "id",
+    "file": "assets/vo/k1.mp3",
+    "voice": "Galang",
+    "speed": 1.06,
+    "pitch": 2,
+    "hash": "53f01e11444b",
+    "duration": 3.422041
+  },
+  {
+    "id": "k2",
+    "scene": "S1",
+    "speaker": "raka-farhan",
+    "text": "Makasih, Kak! Nanti aku ganti, janji.",
+    "language": "id",
+    "file": "assets/vo/k2.mp3",
+    "voice": "2c6adcf6-1ff1-42c6-8162-26861f65853a",
+    "speed": 1.04,
+    "pitch": 0,
+    "hash": "ac7ef35b9891",
+    "duration": 2.925688
+  },
+  {
+    "id": "k3",
+    "scene": "S1",
+    "speaker": "hendra-galang",
+    "text": "Dinda, laporan bulanan sudah siap?",
+    "language": "id",
+    "file": "assets/vo/k3.mp3",
+    "voice": "Galang",
+    "speed": 0.96,
+    "pitch": -2,
+    "hash": "628f52b1d44f",
+    "duration": 2.612245
+  },
+  {
+    "id": "k4",
+    "scene": "S1",
+    "speaker": "hendra-faiz",
+    "text": "Dinda, laporan bulanan sudah siap?",
+    "language": "id",
+    "file": "assets/vo/k4.mp3",
+    "voice": "8281db18-6ac5-47bb-91a8-ce23a1f1d951",
+    "speed": 0.98,
+    "pitch": 0,
+    "hash": "dd382c01cf78",
+    "duration": 2.690563
+  }
+]

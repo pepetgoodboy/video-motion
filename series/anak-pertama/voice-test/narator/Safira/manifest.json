@@ -1,0 +1,26 @@
+[
+  {
+    "id": "a-hook",
+    "scene": "S1",
+    "text": "Jam sembilan pagi, gaji Dinda masuk. Lima juta dua ratus ribu. Jam sembilan lewat lima, uangnya tinggal tiga ratus ribu.",
+    "file": "series/anak-pertama/voice-test/narator/Safira/a-hook.mp3",
+    "speaker": "narator",
+    "voice": "Safira",
+    "speed": 1,
+    "pitch": 0,
+    "hash": "f0ffc26192bc",
+    "duration": 9.482438
+  },
+  {
+    "id": "b-haru",
+    "scene": "S8",
+    "text": "Dinda menangis. Ibu tidak pernah bertanya. Tapi Ibu selalu tahu.",
+    "file": "series/anak-pertama/voice-test/narator/Safira/b-haru.mp3",
+    "speaker": "narator",
+    "voice": "Safira",
+    "speed": 1,
+    "pitch": 0,
+    "hash": "3951e32c052b",
+    "duration": 6.269375
+  }
+]

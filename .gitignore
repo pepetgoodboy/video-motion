@@ -29,3 +29,6 @@ qc-neon-*.png
 qc-*.jpg
 __pycache__/
 *.raw
+
+# Video referensi gaya (milik kreator lain; repo publik → jangan di-commit)
+series/*/referensi/

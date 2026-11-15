@@ -1,0 +1,14 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:#000;overflow:hidden}</style></head><body>
+<script src="vendor/three.min.js"></script><script src="char3d.js"></script><script>
+const W=1080,H=1920,T=THREE;const t0=performance.now();
+const R=AP3D.makeRenderer(W,H);document.body.appendChild(R.domElement);
+const scene=new T.Scene();scene.background=new T.Color('#EEC7A4');scene.add(AP3D.makeKos({dusk:false}));AP3D.makeLights(scene,false);
+const d=AP3D.makeChar('dinda');d.root.position.set(0.15,0,0.4);d.root.rotation.y=-0.22;scene.add(d.root);
+d.setExpr('senang');d.parts.head.rotation.z=0.08;d.parts.head.rotation.x=0.05;
+const P=d.parts;P.armL.rotation.set(-0.9,0,0.35);P.elbowL.rotation.set(-1.35,0,0);
+const phone=new T.Group();const body=new T.Mesh(new T.BoxGeometry(0.34,0.62,0.05),new T.MeshStandardMaterial({color:'#2A2422',roughness:.3}));phone.add(body);
+const scr=new T.Mesh(new T.PlaneGeometry(0.3,0.56),new T.MeshBasicMaterial({color:'#7FD0D6'}));scr.position.z=0.03;phone.add(scr);
+phone.position.set(0,-0.42,0.1);phone.rotation.set(-0.5,0,0);P.elbowL.add(phone);phone.traverse(o=>{if(o.isMesh)o.castShadow=true});
+const cam=new T.PerspectiveCamera(30,W/H,0.1,100);cam.position.set(0.5,2.1,7.6);cam.lookAt(0,1.75,0);
+R.render(scene,cam);document.title='done '+Math.round(performance.now()-t0)+'ms';
+</script></body></html>

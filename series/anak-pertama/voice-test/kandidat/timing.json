@@ -1,0 +1,55 @@
+{
+  "total": 13,
+  "params": {
+    "GAIN": 10.5,
+    "LEAD": 0.3,
+    "GAP": 0.2,
+    "TAIL": 0.5,
+    "LAST": 1.4
+  },
+  "scenes": [
+    {
+      "id": "S1",
+      "lines": [
+        {
+          "id": "k1",
+          "scene": "S1",
+          "speaker": "raka-galang",
+          "file": "assets/vo/t/k1.mp3",
+          "dur": 3.142,
+          "at": 0.3,
+          "abs": 0.3
+        },
+        {
+          "id": "k2",
+          "scene": "S1",
+          "speaker": "raka-farhan",
+          "file": "assets/vo/t/k2.mp3",
+          "dur": 2.698,
+          "at": 3.642,
+          "abs": 3.642
+        },
+        {
+          "id": "k3",
+          "scene": "S1",
+          "speaker": "hendra-galang",
+          "file": "assets/vo/t/k3.mp3",
+          "dur": 2.335,
+          "at": 6.54,
+          "abs": 6.54
+        },
+        {
+          "id": "k4",
+          "scene": "S1",
+          "speaker": "hendra-faiz",
+          "file": "assets/vo/t/k4.mp3",
+          "dur": 2.409,
+          "at": 9.075,
+          "abs": 9.075
+        }
+      ],
+      "start": 0,
+      "duration": 13
+    }
+  ]
+}

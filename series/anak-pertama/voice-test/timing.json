@@ -1,0 +1,118 @@
+{
+  "total": 30.5,
+  "params": {
+    "GAIN": 10.5,
+    "LEAD": 0.4,
+    "GAP": 0.45,
+    "TAIL": 0.5,
+    "LAST": 1
+  },
+  "scenes": [
+    {
+      "id": "S1",
+      "lines": [
+        {
+          "id": "v01",
+          "scene": "S1",
+          "speaker": "dinda-batin",
+          "file": "assets/vo/t/v01.mp3",
+          "dur": 1.855,
+          "at": 0.4,
+          "abs": 0.4
+        },
+        {
+          "id": "v02",
+          "scene": "S1",
+          "speaker": "dinda-batin",
+          "file": "assets/vo/t/v02.mp3",
+          "dur": 2.799,
+          "at": 2.705,
+          "abs": 2.705
+        },
+        {
+          "id": "v03",
+          "scene": "S1",
+          "speaker": "ibu",
+          "file": "assets/vo/t/v03.mp3",
+          "dur": 2.476,
+          "at": 5.954,
+          "abs": 5.954
+        },
+        {
+          "id": "v04",
+          "scene": "S1",
+          "speaker": "dinda",
+          "file": "assets/vo/t/v04.mp3",
+          "dur": 2.516,
+          "at": 8.88,
+          "abs": 8.88
+        },
+        {
+          "id": "v05",
+          "scene": "S1",
+          "speaker": "raka",
+          "file": "assets/vo/t/v05.mp3",
+          "dur": 2.59,
+          "at": 11.846,
+          "abs": 11.846
+        },
+        {
+          "id": "v06",
+          "scene": "S1",
+          "speaker": "mega",
+          "file": "assets/vo/t/v06.mp3",
+          "dur": 3.097,
+          "at": 14.886,
+          "abs": 14.886
+        },
+        {
+          "id": "v07",
+          "scene": "S1",
+          "speaker": "dinda",
+          "file": "assets/vo/t/v07.mp3",
+          "dur": 1.491,
+          "at": 18.433,
+          "abs": 18.433
+        },
+        {
+          "id": "v08",
+          "scene": "S1",
+          "speaker": "dinda-batin",
+          "file": "assets/vo/t/v08.mp3",
+          "dur": 1.926,
+          "at": 20.374,
+          "abs": 20.374
+        },
+        {
+          "id": "v09",
+          "scene": "S1",
+          "speaker": "hendra",
+          "file": "assets/vo/t/v09.mp3",
+          "dur": 2.319,
+          "at": 22.75,
+          "abs": 22.75
+        },
+        {
+          "id": "v10",
+          "scene": "S1",
+          "speaker": "dinda",
+          "file": "assets/vo/t/v10.mp3",
+          "dur": 0.913,
+          "at": 25.519,
+          "abs": 25.519
+        },
+        {
+          "id": "v11",
+          "scene": "S1",
+          "speaker": "ibu",
+          "file": "assets/vo/t/v11.mp3",
+          "dur": 2.462,
+          "at": 26.882,
+          "abs": 26.882
+        }
+      ],
+      "start": 0,
+      "duration": 30.5
+    }
+  ]
+}

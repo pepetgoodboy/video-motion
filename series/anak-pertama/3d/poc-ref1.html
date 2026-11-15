@@ -1,0 +1,58 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Uji 1 shot arah ref1: kamar kos malam, gelap-ungu + lampu gantung hangat, mata putih ber-pupil,
+     gelembung kutipan berlabel, caption karaoke. Render: lihat README di .claude/skills/video-series/references/serial-3d.md §6 (Chrome headless). -->
+<style>
+@font-face{font-family:Nunito;src:url('../../../shared/fonts/nunito-var-latin.woff2') format('woff2');font-weight:200 1000}
+@font-face{font-family:Fredoka;src:url('../../../shared/fonts/fredoka-var-latin.woff2') format('woff2');font-weight:300 700}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#1B1726}
+canvas{position:absolute;left:0;top:0}
+.band{position:absolute;left:0;right:0;bottom:0;height:820px;background:linear-gradient(rgba(16,12,28,0) 0%,rgba(16,12,28,.62) 55%,rgba(16,12,28,.8) 100%)}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse 85% 70% at 50% 42%,rgba(0,0,0,0) 55%,rgba(8,6,16,.55) 100%)}
+.cap{position:absolute;left:70px;right:70px;top:1300px;text-align:center;font:900 60px/1.32 Nunito,sans-serif;color:#fff;text-shadow:0 3px 0 rgba(0,0,0,.25)}
+.cap .now{background:#F5C542;color:#2A2238;border-radius:12px;padding:0 10px;text-shadow:none}
+.cap .next{color:rgba(255,255,255,.42)}
+.bub{position:absolute;left:150px;top:330px;width:780px;box-sizing:border-box;padding:34px 40px;border-radius:30px;background:#FFFDF8;font:800 46px/1.3 Nunito,sans-serif;color:#2E2638;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.bub:after{content:"";position:absolute;left:360px;bottom:-26px;border:28px solid transparent;border-top-color:#FFFDF8;border-bottom:0}
+.tag{position:absolute;left:28px;top:-20px;padding:5px 16px;border-radius:14px;background:#2F7F86;color:#fff;font:700 26px/1 Fredoka,sans-serif;letter-spacing:1px}
+</style></head><body>
+<script src="vendor/three.min.js"></script><script src="char3d.js"></script>
+<div class="vig"></div><div class="band"></div>
+<div class="bub"><span class="tag">IBU</span>“Kamu juga makan yang enak, ya. Ibu tahu kamu suka bakso.”</div>
+<div class="cap">“Kamu juga makan yang <span class="now">enak,</span> <span class="next">ya.</span></div>
+<script>
+const W = 1080, H = 1920, T = THREE, t0 = performance.now();
+const R = AP3D.makeRenderer(W, H); R.toneMappingExposure = 1.0; document.body.insertBefore(R.domElement, document.body.firstChild);
+const scene = new T.Scene(); scene.background = new T.Color("#1B1726");
+const M = (c, r = 0.85) => new T.MeshStandardMaterial({ color: c, roughness: r });
+// set: dinding ungu gelap, lantai kayu gelap, jendela malam, lampu gantung
+const wall = new T.Mesh(new T.PlaneGeometry(16, 10), M("#3A3352", 0.95)); wall.position.set(0, 5, -2.6); wall.receiveShadow = true; scene.add(wall);
+const floor = new T.Mesh(new T.PlaneGeometry(16, 12), M("#3B2A2A", 0.9)); floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; scene.add(floor);
+const sky = AP3D.canvasTex(256, 320, (x, w, h) => { const g = x.createLinearGradient(0, 0, 0, h); g.addColorStop(0, "#141A3A"); g.addColorStop(1, "#2B3263"); x.fillStyle = g; x.fillRect(0, 0, w, h);
+  x.fillStyle = "#F4ECD0"; x.beginPath(); x.arc(150, 100, 38, 0, 7); x.fill(); x.fillStyle = "#1A2147"; x.beginPath(); x.arc(168, 88, 34, 0, 7); x.fill();
+  x.fillStyle = "rgba(255,255,255,.85)"; [[40, 60], [90, 180], [200, 230], [60, 260], [220, 40], [120, 290], [30, 150]].forEach(([a, b]) => { x.beginPath(); x.arc(a, b, 2.5, 0, 7); x.fill(); }); });
+const win = new T.Mesh(new T.PlaneGeometry(1.5, 1.9), new T.MeshBasicMaterial({ map: sky })); win.position.set(1.45, 3.55, -2.58); scene.add(win);
+const wood = M("#5A3E2E", 0.7); const bar = (w, h, x, y) => { const b = new T.Mesh(new T.BoxGeometry(w, h, 0.1), wood); b.position.set(x, y, -2.53); scene.add(b); };
+bar(1.7, 0.1, 1.45, 4.5); bar(1.7, 0.1, 1.45, 2.6); bar(0.1, 2.0, 0.65, 3.55); bar(0.1, 2.0, 2.25, 3.55); bar(0.06, 1.9, 1.45, 3.55); bar(1.5, 0.06, 1.45, 3.55);
+const cord = new T.Mesh(new T.CylinderGeometry(0.012, 0.012, 2.4, 8), M("#1A1420")); cord.position.set(-1.25, 5.6, -0.6); scene.add(cord);
+const bulb = new T.Mesh(new T.SphereGeometry(0.13, 24, 16), new T.MeshBasicMaterial({ color: "#FFF1CF" })); bulb.position.set(-1.25, 4.38, -0.6); scene.add(bulb);
+const halo = new T.Sprite(new T.SpriteMaterial({ map: AP3D.canvasTex(128, 128, (x, w, h) => { const g = x.createRadialGradient(64, 64, 4, 64, 64, 64); g.addColorStop(0, "rgba(255,214,150,.9)"); g.addColorStop(0.35, "rgba(255,190,120,.25)"); g.addColorStop(1, "rgba(255,190,120,0)"); x.fillStyle = g; x.fillRect(0, 0, w, h); }), transparent: true, depthWrite: false, blending: T.AdditiveBlending }));
+halo.scale.set(1.6, 1.6, 1); halo.position.copy(bulb.position); scene.add(halo);
+// cahaya: hemi ungu redup + key hangat dari lampu (bayangan) + point lampu + rim dingin + cahaya layar HP
+scene.add(new T.HemisphereLight("#8A84C0", "#3A2A35", 0.8));
+const fill = new T.DirectionalLight("#FFE2C4", 0.55); fill.position.set(0.3, 2.8, 8); scene.add(fill);
+const key = new T.DirectionalLight("#FFC98A", 0.75); key.position.set(-1.6, 4.8, 4); key.target.position.set(0, 1.8, 0); key.castShadow = true; key.shadow.mapSize.set(2048, 2048);
+Object.assign(key.shadow.camera, { left: -4, right: 4, top: 6, bottom: -1, near: 0.5, far: 20 }); key.shadow.radius = 5; scene.add(key, key.target);
+const lamp = new T.PointLight("#FFB870", 2.4, 9, 2); lamp.position.copy(bulb.position); scene.add(lamp);
+const rim = new T.DirectionalLight("#9AA6FF", 0.7); rim.position.set(3, 4, -4); scene.add(rim);
+// Dinda: mata ref1, haru, memegang HP
+const d = AP3D.makeChar("dinda", { eyes: "sclera" }); d.root.position.set(0.05, 0, 0.3); d.root.rotation.y = -0.12; scene.add(d.root);
+d.root.traverse((o) => { if (o.isMesh && o.material && o.material.roughness !== undefined) o.material.roughness = Math.max(o.material.roughness, 0.82); });
+d.setExpr("haru"); const P = d.parts; P.head.rotation.set(0.1, 0.06, 0.07);
+P.armL.rotation.set(-0.95, 0, 0.32); P.elbowL.rotation.set(-1.4, 0, 0);
+P.pupils.forEach((p) => p.position.set(0.012, -0.022, 0.035)); // melirik ke bawah (ke HP)
+const ph = AP3D.makePhone("#CFE8FF"); ph.position.set(0, -0.42, 0.1); ph.rotation.set(-0.5, 0, 0); P.elbowL.add(ph);
+const glow = new T.PointLight("#CFE3FF", 0.9, 1.6, 2); glow.position.set(0, 0.05, 0.25); ph.add(glow);
+// kamera: setinggi dada, tokoh besar di bawah-tengah
+const cam = new T.PerspectiveCamera(40, W / H, 0.1, 100); cam.position.set(0.1, 2.6, 6.5); cam.lookAt(0.05, 2.41, 0);
+R.render(scene, cam); document.title = "done " + Math.round(performance.now() - t0) + "ms";
+</script></body></html>
