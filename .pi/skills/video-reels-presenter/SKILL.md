@@ -1,6 +1,6 @@
 ---
 name: video-reels-presenter
-description: Buat video Reels/TikTok 9:16 yang TIDAK faceless — presenter nyata (footage sendiri) dipadukan dengan scene HyperFrames. Dipakai saat user menempel footage/folder rekaman atau minta "video reels tapi ada orangnya / pakai muka gue / ada presenter". Menjalankan pipeline HyperFrames yang sama dengan video-reels (scaffold portrait, font shared, BGM/SFX, render 120fps, blend 60fps) TAMBAH lapisan presenter — trim per shot, cutout alpha, sinkron audio rekaman, dan gerbang verifikasi alpha + lip-sync.
+description: Buat video Reels/TikTok 9:16 yang TIDAK faceless — presenter nyata (footage sendiri) dipadukan dengan scene HyperFrames. Dipakai saat user menempel footage/folder rekaman atau minta "video reels tapi ada orangnya / pakai muka gue / ada presenter". Menjalankan pipeline HyperFrames yang sama dengan video-reels (scaffold portrait, font shared, BGM/SFX, render 120fps, blend 60fps) TAMBAH lapisan presenter — trim per shot, cutout alpha, sinkron audio rekaman, dan gerbang verifikasi alpha + lip-sync. Bukan untuk rekaman bicara bebas TANPA brief yang disunting jadi komentar + sisipan kolase (itu video-komentar).
 ---
 
 # /video-reels-presenter — brief + footage → MP4
@@ -12,6 +12,9 @@ berubah ketika ada manusia di dalam frame**.
 
 Kalau langkah umum disalin ke sini, dua file akan basi bersamaan dan tiap gotcha baru harus
 diperbaiki dua kali. **Rujuk, jangan duplikat.**
+
+Tidak ada brief, user cuma bicara bebas di kamera dan minta komentar + kolase → pakai `/video-komentar`
+(`.claude/skills/video-komentar/SKILL.md`), bukan skill ini.
 
 ## Yang berbeda dari jalur faceless
 

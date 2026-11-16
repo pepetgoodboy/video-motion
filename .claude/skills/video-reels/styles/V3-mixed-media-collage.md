@@ -33,6 +33,18 @@ dalam satu komposisi, jelas bahwa tiap potongan datang dari tempat berbeda.
   scan/foto sendiri, atau ilustrasi buatan sendiri. Catat sumber tiap aset di `STYLE.md`.
 - Tekstur halftone/riso: SVG pattern statis, di-`background-position`-geser seperti grain.
 
+## Varian kanal: kolase editorial gelap (`/video-komentar`)
+
+Dipakai kanal komentar (profil `kanal/<nama>/kanal.json`, analisa `kanal/persib/ANALISA.md`): grid gelap,
+foto hitam-putih bertepi sobek, lingkaran sinar, judul kuning bercahaya, cap merah, caption satu kata.
+Logo klub di sana = **subjek yang dibahas** dan disiapkan user (bukan hiasan); keputusan hak cipta di user.
+Teknik yang berlaku juga untuk V3 faceless:
+
+- Perlakuan foto (hitam-putih, halftone) **dipanggang jadi PNG** lewat `hyperframes media-treatment`; di 0.8.169
+  perlakuan runtime pada `<img>` di dalam sisipan tampil di snapshot tapi **tidak ikut di MP4**.
+- `clip-path` di atas media berperlakuan mematikan perlakuan → tepi sobek dibuat di lapisan kertas terpisah di
+  belakang foto.
+
 ## Batas render
 
 Paling berat dari semua tipe V karena tiap lapisan punya tekstur + rotasi + bayangan.

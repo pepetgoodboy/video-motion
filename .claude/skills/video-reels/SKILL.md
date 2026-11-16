@@ -25,6 +25,12 @@ Episode serial dengan tokoh tetap (`series/<nama>/` ada, mis. Anak Pertama) **ti
 Pakai `/video-series` (`.claude/skills/video-series/SKILL.md`): gaya, format, dan suara dikunci per serial,
 render 3D 30 fps, template build, tambalan per scene. Aturan komposisi & audio di skill ini tetap berlaku.
 
+## Rekaman bicara bebas → pakai `/video-komentar`
+
+User merekam dirinya bicara bebas (tanpa brief/naskah, tanpa TTS) lalu minta disunting jadi komentar + kolase
+(mis. kanal Persib) → **bukan** skill ini. Pakai `/video-komentar` (`.claude/skills/video-komentar/SKILL.md`),
+profil kanal di `kanal/<nama>/kanal.json`.
+
 ## Fase A — topik → BRIEF.md (mode topik saja)
 
 Ikuti `references/topik-ke-brief.md` seluruhnya. Ringkas:

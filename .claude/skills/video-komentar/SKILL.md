@@ -67,7 +67,8 @@ Whisper salah di nama/istilah bola (tes: "persih persocian" = Persib vs Shan, "S
 
 Tanyakan mode bila user belum memilih. Zona aman dihitung dari frame rekaman: **jangan menutup wajah**.
 Ukur: puncak kepala & lebar kepala dari frame (ambang gelap), lalu taruh stiker di atas puncak kepala atau di luar lebar kepala.
-Contoh koran: `kanal/persib/contoh/build-test-01-koran.mjs`; tekstur kertas dibuat deterministik (PIL, seed tetap).
+Contoh koran: `kanal/persib/contoh/build-test-01-koran.mjs`; tekstur kertas teruji (noise krem 512 px, tile) =
+`kanal/persib/contoh/paper-tex.png` → salin ke `assets/aset/paper-tex.png`.
 
 Per kalimat/kata kunci: talking head atau sisipan (2–4 s). Kalimat pertama → **judul hook** di atas (label kecil +
 2 baris, satu kata di plat merah). Sisipan di nama klub/lawan, tempat, kompetisi, hari/skor. **Semua elemen sebuah
