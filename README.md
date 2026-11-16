@@ -211,8 +211,13 @@ video-motion/
 │   ├── sfx/                   # 14 SFX siap pakai (lihat THIRD-PARTY.md untuk lisensi)
 │   └── vendor/gsap.min.js     # GSAP lokal (jangan CDN — lihat §7)
 ├── tools/                     # cartesia-vo, qa-video, diagnose-motion, measure-*, gen-tex-copier
+├── kanal/<nama>/              # profil kanal /video-komentar (kanal.json + contoh build; aset/ di-ignore)
+├── series/<nama>/             # serial 3D (series.json, BIBLE.md, template)
 ├── .claude/skills/
-│   └── video-reels/           # pipeline + 21 style card + FEASIBILITY
+│   ├── video-reels/           # pipeline faceless + style card + FEASIBILITY
+│   ├── video-reels-presenter/ # lapisan presenter (footage + brief)
+│   ├── video-series/          # episode serial 3D
+│   └── video-komentar/        # rekaman bicara bebas + sisipan kolase
 └── videos/<slug>/             # satu project per video — TIDAK di-commit
     ├── index.html
     ├── compositions/frames/   # satu file per scene

@@ -1,0 +1,49 @@
+{
+  "slug": "persib",
+  "nama": "Kanal komentar Persib Bandung",
+  "format": "komentar",
+  "status": "teruji 1x (tes 11 s, 15 Nov 2026) — lihat skill video-komentar",
+  "presenter": {
+    "rekaman": "duduk, HP vertikal 9:16 di tripod setinggi mata",
+    "suara": "rekaman sendiri, bicara bebas (tanpa naskah); TTS tidak dipakai"
+  },
+  "durasi_target": [
+    45,
+    60
+  ],
+  "gaya": {
+    "v": "V3",
+    "varian": "kolase editorial gelap (referensi/persib/_analisa/ANALISA.md)",
+    "warna": {
+      "latar": "#14151C",
+      "grid": "#2A2D3A",
+      "biru_logo": "#204098 (diambil dari logo resmi)",
+      "kuning_logo": "#F0E820 (logo resmi)",
+      "aksen_sinar": "#1F4FD8 (biru logo dicerahkan supaya menyala di latar gelap)",
+      "judul": "#FFD43B",
+      "plat": "#E0303A",
+      "teks": "#FFFFFF"
+    },
+    "elemen": [
+      "foto hitam-putih dipotong (remove-background)",
+      "lingkaran sinar (sunburst) warna aksen di belakang objek",
+      "latar grid gelap",
+      "logo pop",
+      "judul kuning bercahaya, huruf masuk bergoyang",
+      "koran sobek / kertas",
+      "halftone",
+      "plat sensor"
+    ],
+    "caption": "satu kata, tengah-bawah, putih sans tebal"
+  },
+  "aset": "kanal/persib/aset/ (logo PNG transparan, foto pemain/stadion — disiapkan user, di-ignore git)",
+  "posting": {
+    "platform": "facebook (Reels)",
+    "hashtag_tetap": [
+      "#Persib",
+      "#PersibBandung",
+      "#Bobotoh"
+    ],
+    "aturan": "3–5 hashtag di caption, tanpa #fyp/#viral; hook di baris pertama"
+  }
+}

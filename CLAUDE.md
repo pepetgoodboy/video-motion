@@ -40,18 +40,24 @@ Pakai skill **`/video-series`** (`.claude/skills/video-series/`, panduan mesin `
 `series/<nama>/template/build-episode.mjs`. **Pengecualian render:** seri 3D = **30 fps** tanpa blend 120→60
 (three.js di CPU, ±80 menit/episode); gate `qa-video.mjs --fps 30`; revisi lewat `tools/patch-splice.mjs`.
 
-### Dua mode: faceless vs presenter
+### Mode: faceless vs presenter vs komentar
 
 | Mode | Skill | Input | Kapan |
 |---|---|---|---|
 | **Faceless** (default) | `/video-reels` | topik **atau** 1 brief `.md` | tidak ada orang di frame |
 | **Presenter** | `/video-reels-presenter` | brief `.md` **+ folder footage** | ada orang nyata di frame |
+| **Komentar** | `/video-komentar` | `<kanal> <folder-rekaman>` | user bicara bebas di kamera (tanpa brief/TTS), disunting + sisipan kolase |
 
 Mode presenter memakai seluruh pipeline yang sama; skill di
 `.claude/skills/video-reels-presenter/` hanya menambah lapisan presenter (P1/P2/P3), trim per shot,
 cutout alpha, dan verifikasi lip-sync. **Langkah umum jangan diduplikat** — rujuk skill faceless.
 
 Pemicu: user menyebut footage/rekaman/"pakai muka gue"/"ada orangnya"/"presenter".
+
+**Mode komentar** (`.claude/skills/video-komentar/`): suara = rekaman user yang dibersihkan dari noise, transkrip
+Whisper per kata (ejaan dikoreksi manual), tiga tata letak (sisipan penuh / overlay / koran). Profil kanal di
+`kanal/<nama>/kanal.json`; aset pihak ketiga di `kanal/<nama>/aset/` (di-ignore git). Contoh build teruji:
+`kanal/persib/contoh/`. Pemicu: "video komentar", "bahas Persib", "bersihkan suaranya".
 
 ---
 
@@ -138,6 +144,8 @@ player adalah tebakan salah yang pernah terjadi. Baru setelah interval bersih, c
 ```
 video-motion/
 ├── source/              # brief .md (input dari Claude web)
+├── kanal/<nama>/        # profil kanal /video-komentar: kanal.json + contoh/ (aset/ di-ignore)
+├── series/<nama>/       # serial 3D: series.json + BIBLE.md + template/
 ├── shared/              # font + SFX lintas video
 ├── tools/               # script bantu: pick-direction.mjs + direction-map.json (arahan),
 │                        #   cartesia-vo.mjs (VO multi-suara), naskah-check.mjs, qa-variety.py,

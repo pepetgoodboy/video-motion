@@ -32,3 +32,9 @@ __pycache__/
 
 # Video referensi gaya (milik kreator lain; repo publik → jangan di-commit)
 series/*/referensi/
+
+# Video referensi umum per topik (milik kreator lain; repo publik → jangan di-commit)
+referensi/
+
+# Aset pihak ketiga per kanal (logo resmi, foto pemain) — disiapkan user, jangan di-commit
+kanal/*/aset/
